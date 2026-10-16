@@ -1,0 +1,20 @@
+﻿# SAMPLE - synthetic test data made by data_request/samples/make_samples.py. NOT Eastwater data: never use or present these numbers as real.
+pump_id,station_id,status,rated_flow_m3_h,rated_head_m,rated_power_kw,pump_efficiency_pct,motor_efficiency_pct,vsd,year_installed,last_overhaul,model_curve,model_status,notes
+NPL2-01p,NPL2,duty,1500,85,500,82,95,no,2010,,"NPL_2: 28 points, 0-1,642 m3/h, 138.36-61.03 m",Open,SAMPLE values
+NPL2-02p,NPL2,duty,1500,85,500,82,95,no,2010,,"NPL_2: 28 points, 0-1,642 m3/h, 138.36-61.03 m",Open,SAMPLE values
+NPL2-03p,NPL2,duty,1500,85,500,82,95,no,2010,,"NPL_2: 28 points, 0-1,642 m3/h, 138.36-61.03 m",Open,SAMPLE values
+NPL2-04p,NPL2,duty,1500,85,500,82,95,no,2010,,"NPL_2: 28 points, 0-1,642 m3/h, 138.36-61.03 m",Open,SAMPLE values
+NPL2-05p,NPL2,duty,1500,85,500,82,95,no,2010,,"NPL_2: 28 points, 0-1,642 m3/h, 138.36-61.03 m",Open,SAMPLE values
+NPL2-06p,NPL2,duty,1500,85,500,82,95,no,2010,,"NPL_2: 28 points, 0-1,642 m3/h, 138.36-61.03 m",Open,SAMPLE values
+NPL3-01p,NPL3,duty,2300,90,900,80,95,no,2010,,"NPL3-115: 1,665 m3/h at 115 m (single point)",Open,SAMPLE values
+NPL3-02p,NPL3,duty,2300,90,900,80,95,no,2010,,"NPL3-115: 1,665 m3/h at 115 m (single point)",Open,SAMPLE values
+NPL3-03p,NPL3,duty,2300,90,900,80,95,no,2010,,"NPL3-115: 1,665 m3/h at 115 m (single point)",Open,SAMPLE values
+NPL3-04p,NPL3,duty,2300,90,900,80,95,no,2010,,"NPL3-115: 1,665 m3/h at 115 m (single point)",Open,SAMPLE values
+NPL3-05p,NPL3,duty,2300,90,900,80,95,no,2010,,"NPL3-115: 1,665 m3/h at 115 m (single point)",Open,SAMPLE values
+NPL3-06p,NPL3,duty,2300,90,900,80,95,no,2010,,"NPL3-115: 1,665 m3/h at 115 m (single point)",Open,SAMPLE values
+TM_Pond_01p,TM_Pond,duty,2400,100,1100,80,95,no,2010,,"TM_Pond: 2,160 m3/h at 106 m (single point)",Open,SAMPLE values
+TM_Pond_02p,TM_Pond,duty,2400,100,1100,80,95,no,2010,,"TM_Pond: 2,160 m3/h at 106 m (single point)",Open,SAMPLE values
+TM_Pond_03p,TM_Pond,standby,2400,100,1100,80,95,no,2010,,"TM_Pond: 2,160 m3/h at 106 m (single point)",Closed,SAMPLE values
+TM_Pond_04p,TM_Pond,standby,2400,100,1100,80,95,no,2010,,"TM_Pond: 2,160 m3/h at 106 m (single point)",Closed,SAMPLE values
+TM_Pond_05p,TM_Pond,standby,2400,100,1100,80,95,no,2010,,"TM_Pond: 2,160 m3/h at 106 m (single point)",Closed,SAMPLE values
+TM_Pond_06p,TM_Pond,standby,2400,100,1100,80,95,no,2010,,"TM_Pond: 2,160 m3/h at 106 m (single point)",Closed,SAMPLE values

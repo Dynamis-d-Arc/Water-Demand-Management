@@ -1,4 +1,4 @@
-# Water demand & supply POC: Bang Phra
+# Water demand & supply POC: Bang Phra and Rayong
 
 Proof of concept for the Forecast → Optimize → EPANET check flow. It:
 
@@ -7,7 +7,9 @@ Proof of concept for the Forecast → Optimize → EPANET check flow. It:
 3. Builds a storage risk outlook for Bang Phra (probability of falling below 30% of capacity).
 4. Checks the Rayong EPANET model (`../Demand-2023 v20RY to MTP new TM2P.inp`) and grades any pump schedule Pass, Warning or Fail.
 5. Prototypes day-ahead pump scheduling (Plans A/B/C), with every plan checked in EPANET.
-6. Presents the results in an executive dashboard, [`dashboard/poc_dashboard.html`](dashboard/poc_dashboard.html).
+6. Tests where pumping savings could come from: bigger head tanks, holding the tanks lower, and the cost per m³ of each source.
+7. Presents the results in an executive dashboard, [`dashboard/poc_dashboard.html`](dashboard/poc_dashboard.html), and a POC report with Go/No-Go criteria, [`reports/poc_report.md`](reports/poc_report.md).
+8. Prepares the data request to Eastwater, and the loaders that will measure the saving against today's operation once the data arrive ([`data_request/`](data_request/README.md)).
 
 Data cleaning and the dashboard build run in Python. Forecasting, optimization and EPANET checks run in MATLAB R2026b; the Python versions of the backtest and the EPANET check are kept for comparison.
 
@@ -19,6 +21,7 @@ Data cleaning and the dashboard build run in Python. Forecasting, optimization a
 - **Supply outlook:** switch between recent use and the allocation plan, and with or without diversions.
 - **Supporting charts:** storage since 1990, demand growth, use against the allocation plan, and forecast accuracy.
 - **Network:** customer pressures, the pump-plan comparison and pumps by hour.
+- **Savings:** the lower-tank lever, the off-peak saving by head-tank size, and energy per m³ by station and pumps running.
 - **Roadmap:** status against the proposal's POC and QW1–QW4 phases, plus the decisions and data needed.
 
 Every chart has a hover readout and a **Show data** table. The **Theme** button switches between light and dark; light suits projectors.
@@ -30,6 +33,26 @@ python src/build_dashboard.py     # -> dashboard/poc_dashboard.html (from dashbo
 ```
 
 The page embeds client data (reservoir volumes, network pressures). Share it under the same terms as the data.
+
+## POC report
+
+[`reports/poc_report.md`](reports/poc_report.md) is the written report for Eastwater. It covers the results against the proposal, the assumptions behind them, the data still needed, the KPIs and the Go/No-Go criteria. It recommends a conditional Go, with Rayong as the pilot area. Every figure is tagged with the output it comes from. `reports/poc_report.docx` is the same report in Word.
+
+## Eastwater data request
+
+[`data_request/`](data_request/README.md) holds:
+- the request to send Eastwater (`request_checklist.md`, English and Thai);
+- the CSV templates and the data dictionary;
+- a synthetic SAMPLE set for testing the loaders.
+
+When the data arrive, save them in `data/eastwater/raw/` and run:
+
+```bash
+python src/load_eastwater.py      # ~5 s -> data/eastwater/ (checked data, validation_report.md)
+python src/baseline_vs_today.py   # ~5 s -> reports/baseline_vs_today.md (today's baseline, saving of each pump plan)
+```
+
+With no files in `raw/`, both scripts run on the SAMPLE set and name their outputs `SAMPLE_*` and `*_SAMPLE.*`. Git ignores both `data/eastwater/` and the `*_SAMPLE.*` reports: Eastwater's data stay on this computer under the NDA, and the SAMPLE results are synthetic.
 
 ## Run
 
@@ -66,6 +89,7 @@ matlab -batch "run('matlab/check_epanet.m')"         # runs the .inp from MATLAB
 matlab -batch "run('matlab/backtest_forecast.m')"    # ~6 min -> reports/matlab/ (port of src/backtest.py)
 matlab -batch "run('matlab/supply_outlook.m')"       # ~1 min -> reports/matlab/supply_outlook.* (storage risk, ESP)
 matlab -batch "run('matlab/optimize_pumps.m')"       # ~25 min -> pump plans A/B/C, each checked in EPANET
+matlab -batch "run('matlab/whatif_storage_sources.m')"  # ~34 min -> storage what-if, cost per m³ by source
 ```
 
 Reusable functions in `matlab/`:
@@ -142,7 +166,7 @@ plot(t, S.bangphra.use_pwa_chonburi_m3)
 - **Pump scheduling prototype** (`optimize_pumps.m`, [report](reports/matlab/pump_plans.md)).
   - **The network has little slack at the model's demand.** Customers are fed by gravity from two head tanks that hold about 16,400 m³ together, roughly 34 minutes of demand. At 688k m³/day, even every usable pump (6 NPL2 + 6 NPL3 + 2 TM Pond; TM Pond pumps 3–6 can never run) leaves NPL3_HT draining by about 775 m³/h, about 18,600 m³/day. So no schedule can repeat daily; either nodes `71`/`678` (100k m³/day each) are placeholders, or the NPL3 zone is short of capacity.
   - **Without those two nodes (488k m³/day), the lowest-energy schedule passes EPANET** at 0.264 kWh/m³ and 448,393 THB/day at the assumed tariff. The model's own operation uses 0.278 kWh/m³ at the full 688k demand, so the two aren't directly comparable.
-  - **Time-of-use scheduling adds nothing.** In the final run, the one tariff-aware plan that passed (Plan B, 50% reserve) costs 0.2% *more* than the lowest-energy schedule. Across all runs, valid tariff-aware plans ranged from −0.4% to +0.6%. The tanks are too small to shift pumping out of peak hours; real savings would need upstream storage in the plan (raw-water ponds and reservoirs) or better pump efficiency.
+  - **Time-of-use scheduling adds nothing.** In the final run, the one tariff-aware plan that passed (Plan B, 50% reserve) costs 0.2% *more* than the lowest-energy schedule. Across all runs, valid tariff-aware plans ranged from −0.4% to +0.6%. The tanks are too small to shift pumping out of peak hours, and the storage what-if below shows that bigger tanks would not change that.
   - **The EPANET check does its job.** Plan A looked 3.3% cheaper, but in EPANET NPL2_HT ended the day 8.3 m low and Burapa fell below its pressure target. Plan C also failed. Both are shown as rejected rather than as savings.
   - **How the optimizer works:**
     - Tank inflows are measured at two tank levels and averaged.
@@ -150,6 +174,11 @@ plot(t, S.bangphra.use_pwa_chonburi_m3)
     - The EPANET check judges each plan against its fixed reserve and pressure spec. Up to six optimise-and-check rounds raise the planning reserve when a plan misses.
     - The MILP stops at a 0.5% optimality gap. Some solves hit the 300-second safety limit, so exact figures can differ slightly between runs. The conclusions above held in every run.
     - A full run takes about 25 minutes.
+- **Storage what-if and cost per m³ by source** (`matlab/whatif_storage_sources.m`, [report](reports/matlab/whatif_storage_sources.md)). It uses the 488k m³/day weekday at the assumed tariff, and checks every plan in EPANET.
+  - **Bigger head tanks would not make off-peak pumping pay.** Shifting pumping out of peak hours saves 0.2% with today's tanks, 0.4% at 2×, 0.3% at 5× and 0.9% at 10× the storage. Running more pumps at once in the off-peak hours raises the head they pump against (NPL3: 60 m with one pump, 86 m with six), which uses up most of the cheaper rate.
+  - **Holding the head tanks lower is the biggest lever found.** Keeping them only as full as the customer pressure floors need (NPL2_HT 46–56%, NPL3_HT 49–70%) uses 0.2447 kWh/m³. That is 7.5% less energy than starting and ending the day 85% full, about 35,700 THB/day at the assumed tariff. It needs no new assets but leaves less water in reserve, so Eastwater must agree the minimum tank levels. NPL3_HT must stay above about 35% full for every customer to keep its pressure floor.
+  - **Cost per m³ by source.** NPL3 with one pump gives the cheapest water: 0.219 kWh/m³, 0.57 THB/m³ off-peak. TM Pond with two pumps is the dearest at 0.348 kWh/m³, because it lifts from a reservoir 20 m lower. Only NPL2 has an efficiency curve in the model; NPL3 and TM Pond assume 75%.
+  - The level-dependent tank inflows, pump power and pressures are fitted on 16,464 EPANET snapshots. All 9 plans pass on the first EPANET check. A full run takes about 34 minutes.
 
 ## EPANET and Windows Smart App Control
 
@@ -161,5 +190,6 @@ The MATLAB scripts therefore run EPANET through the Python `epyt` package by def
 
 1. Add known future events to the demand model: monthly allocation plans and contract changes.
 2. Add rainfall forecasts and storage-dependent diversions to the supply outlook, and calibrate its P10–P90 range.
-3. Get customer meter and SCADA data for the 28 EPANET demand nodes. Add hourly demand patterns, the real tariff and pump availability. Model the raw-water storage upstream so scheduling has room to shift.
-4. Confirm with the model owner what nodes `71`/`678` represent, whether TM Pond pumps 3–6 are standby, and the source reservoir heads.
+3. Send the data request (`data_request/request_checklist.md`). It covers customer meter and SCADA data for the 28 EPANET demand nodes, pump operation and energy, the real tariff, and pump tests for the NPL3 and TM Pond efficiency curves. Then run `load_eastwater.py` and `baseline_vs_today.py` to measure the saving against today's operation.
+4. Agree with Eastwater the lowest head-tank levels it accepts, to turn the 7.5% lower-tank saving into an operating rule.
+5. Confirm with the model owner what nodes `71`/`678` represent, whether TM Pond pumps 3–6 are standby, and the source reservoir heads.

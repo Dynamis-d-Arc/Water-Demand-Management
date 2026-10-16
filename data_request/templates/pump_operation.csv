@@ -1,0 +1,2 @@
+﻿timestamp,pump_id,pumps_running,flow_m3_h,power_kw,speed_pct,interval_min
+#YYYY-MM-DD HH:MM Thai time (Asia/Bangkok UTC+07:00),EPANET ID (e.g. NPL2-01p),0-1 per pump; 0-6 per station (e.g. 1),m3/h (e.g. 1450),kW (e.g. 430),% (e.g. 100),min (e.g. 60)

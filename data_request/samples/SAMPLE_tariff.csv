@@ -1,0 +1,11 @@
+﻿# SAMPLE - synthetic test data made by data_request/samples/make_samples.py. NOT Eastwater data: never use or present these numbers as real.
+meter_id,valid_from,valid_to,component,day_type,start_time,end_time,rate,unit,period_name,notes
+ALL,2026-01-01,,energy,weekday,09:00,22:00,4.1839,THB/kWh,On Peak,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,,energy,weekday,22:00,09:00,2.6037,THB/kWh,Off Peak,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,,energy,weekend,00:00,24:00,2.6037,THB/kWh,Off Peak,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,,energy,holiday,00:00,24:00,2.6037,THB/kWh,Off Peak,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,,demand,weekday,09:00,22:00,132.93,THB/kW,On Peak,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,2026-04-30,ft,,,,0.2,THB/kWh,,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,,service,,,,312.24,THB/month,,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-01-01,,vat,,,,7.0,%,,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"
+ALL,2026-05-01,2026-08-31,ft,,,,0.25,THB/kWh,,"SAMPLE: energy rates as the POC's assumed tariff; demand, Ft and service illustrative"

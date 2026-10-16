@@ -1,0 +1,2 @@
+﻿timestamp,node_id,volume_m3,reading_m3,interval_min,meter_id,customer_name,quality
+#YYYY-MM-DD HH:MM Thai time (Asia/Bangkok UTC+07:00),EPANET ID (e.g. MTP-IEAT3),m3 (e.g. 118500),m3,min (e.g. 1440),text,text,measured / estimated

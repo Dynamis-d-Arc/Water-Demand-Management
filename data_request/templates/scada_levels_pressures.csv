@@ -1,0 +1,2 @@
+﻿timestamp,point_id,quantity,value,unit
+#YYYY-MM-DD HH:MM Thai time (Asia/Bangkok UTC+07:00),EPANET ID (e.g. NPL2_HT),level / pressure,see unit (e.g. 18.4),m / m_msl / bar / kPa / kg/cm2 / psi

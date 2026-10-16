@@ -1,0 +1,2 @@
+﻿timestamp,meter_id,station_id,kwh,interval_min,kw_max
+#YYYY-MM-DD HH:MM Thai time (Asia/Bangkok UTC+07:00),e.g. 020001234567,EPANET ID (e.g. NPL2),kWh (e.g. 2690),min (e.g. 60),kW (e.g. 2750)

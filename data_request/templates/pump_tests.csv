@@ -1,0 +1,2 @@
+﻿pump_id,test_date,flow_m3_h,head_m,power_kw,efficiency_pct,speed_pct,source
+#EPANET ID (e.g. NPL3-02p),YYYY-MM-DD,m3/h (e.g. 1650),m (e.g. 112),kW (e.g. 730),% (e.g. 69),% (e.g. 100),e.g. site test

@@ -1,0 +1,2 @@
+﻿meter_id,valid_from,valid_to,component,day_type,start_time,end_time,rate,unit,period_name,notes
+#e.g. ALL,YYYY-MM-DD,YYYY-MM-DD,energy / demand / ft / service / vat,weekday / weekend / holiday / all,HH:MM (24:00 = midnight),HH:MM (24:00 = midnight),see unit (e.g. 4.1839),THB/kWh / THB/kW / THB/month / %,e.g. On Peak,e.g. PEA 4.2.2 TOU

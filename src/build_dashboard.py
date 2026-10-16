@@ -3,7 +3,7 @@
 Usage:  python src/build_dashboard.py
 
 Reads the cleaned Bang Phra data, the MATLAB reports (forecast backtest, supply outlook,
-pump plans) and the EPANET check, gathers the numbers the page shows into one JSON block,
+pump plans, storage what-if) and the EPANET check, gathers the numbers the page shows into one JSON block,
 and writes dashboard/poc_dashboard.html from dashboard/template.html. The page is a single
 file: it needs no network (the web fonts are optional and fall back to system fonts).
 Re-run it after any of the analysis scripts so the page shows the same numbers as the reports.
@@ -207,6 +207,37 @@ def network_section():
     }
 
 
+def savings_section():
+    """Storage what-if and cost per m3 by station (matlab/whatif_storage_sources.m)."""
+    w = pd.read_csv(MAT / "whatif_storage_kpis.csv")
+    st = pd.read_csv(MAT / "whatif_station_cost.csv")
+    k = pd.read_csv(MAT / "pump_plans_kpis.csv")
+    storage = []
+    for scale, g in w[w["plan"].isin(["Reference (lowest energy)", "Lowest cost (tariff-aware)"])].groupby("storage_scale"):
+        ref = g[g["plan"] == "Reference (lowest energy)"].iloc[0]
+        low = g[g["plan"] == "Lowest cost (tariff-aware)"].iloc[0]
+        storage.append({"scale": int(scale), "volume": r(ref["usable_volume_m3"], 0), "hours": r(ref["storage_hours"], 4),
+                        "refCost": r(ref["cost_thb"], 0), "lowCost": r(low["cost_thb"], 0),
+                        "bothPass": bool(ref["passes"]) and bool(low["passes"]),
+                        "savingPct": r(low["saving_pct"], 6), "savingThb": r(low["saving_thb_per_day"], 0),
+                        "vsTodayPct": r(low["saving_vs_today_pct"], 6)})
+    # Lower-tank lever: the what-if's lowest-energy plan for today's tanks vs the pump-plans reference
+    high = k[(k["scenario"] == "Without placeholder nodes 71 and 678") & k["schedule"].str.startswith("Reference")].iloc[0]
+    lowp = w[(w["storage_scale"] == 1) & (w["plan"] == "Reference (lowest energy)")].iloc[0]
+    lever = {"highKwh": r(high["kwh_per_m3"], 6), "highEnergy": r(high["energy_kwh"], 0), "highCost": r(high["cost_thb"], 0),
+             "highPass": high["status"] == "Pass" and bool(high["converged"]),
+             "lowKwh": r(lowp["kwh_per_m3"], 6), "lowEnergy": r(lowp["energy_kwh"], 0), "lowCost": r(lowp["cost_thb"], 0),
+             "lowPass": bool(lowp["passes"]),
+             "energyPct": r(100 * (1 - lowp["energy_kwh"] / high["energy_kwh"]), 6),
+             "thbDay": r(high["cost_thb"] - lowp["cost_thb"], 0),
+             "levels": {"NPL2_HT": [r(lowp["npl2ht_min_pct"], 0), r(lowp["npl2ht_max_pct"], 0)],
+                        "NPL3_HT": [r(lowp["npl3ht_min_pct"], 0), r(lowp["npl3ht_max_pct"], 0)]}}
+    stations = [[s.station, int(s.pumps), r(s.kwh_per_m3_85, 6), r(s.thb_per_m3_offpeak, 6), r(s.thb_per_m3_peak, 6),
+                 r(s.flow_m3h, 0), r(s.head_m, 1), r(s.efficiency_pct, 1), s.efficiency_source]
+                for s in st[st["valid_85"] == 1].itertuples()]
+    return {"storage": storage, "lever": lever, "stations": stations}
+
+
 def main():
     d = pd.read_csv(CLEAN_DIR / "bangphra_daily.csv", parse_dates=["date"])
     plan = pd.read_csv(CLEAN_DIR / "bangphra_allocation_plan.csv", parse_dates=["date"])
@@ -219,6 +250,7 @@ def main():
         "demand": demand_section(d, plan),
         "accuracy": accuracy_section(d),
         "network": network_section(),
+        "savings": savings_section(),
     }
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/{}", blob)
@@ -229,6 +261,9 @@ def main():
     print("storage accuracy:", data["accuracy"]["storage"])
     print("plan vs actual:", [(x["user"], x["pct"]) for x in data["demand"]["planVsActual"]])
     print("network model:", data["network"]["model"], "tanks", data["network"]["tankStorage"], data["network"]["tankMinutes"])
+    sv = data["savings"]
+    print("savings: lever energy -%.1f%%, %d THB/day | storage" % (sv["lever"]["energyPct"], sv["lever"]["thbDay"]),
+          [(x["scale"], round(x["savingPct"], 2), x["bothPass"]) for x in sv["storage"]])
 
 
 if __name__ == "__main__":

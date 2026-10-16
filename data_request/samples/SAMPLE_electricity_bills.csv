@@ -1,0 +1,5 @@
+﻿# SAMPLE - synthetic test data made by data_request/samples/make_samples.py. NOT Eastwater data: never use or present these numbers as real.
+meter_id,station_id,period_start,period_end,tariff_code,kwh_on_peak,kwh_off_peak,kwh_total,kw_max_on_peak,kw_max_partial_peak,kw_max_off_peak,energy_charge_thb,demand_charge_thb,ft_charge_thb,ft_thb_per_kwh,service_charge_thb,pf_charge_thb,other_charge_thb,total_ex_vat_thb,vat_thb,total_thb
+SAMPLE-CA-0001,NPL2,2026-03-01,2026-03-31,SAMPLE 4.2.2 TOU,509326,880955,1390281,2036.9,,2141.8,4424711.58,270765.12,278056.22,0.2,312.24,0,0,4973845.16,348169.16,5322014.32
+SAMPLE-CA-0002,NPL3,2026-03-01,2026-03-31,SAMPLE 4.2.2 TOU,920264,1566477,2486741,3680.4,,3691.0,7928929.0,489235.57,497348.22,0.2,312.24,0,0,8915825.03,624107.75,9539932.78
+SAMPLE-CA-0003,TM_Pond,2026-03-01,2026-03-31,SAMPLE 4.2.2 TOU,525474,671332,1196806,1995.6,,1986.3,3946479.64,265275.11,239361.29,0.2,312.24,0,0,4451428.28,311599.98,4763028.26

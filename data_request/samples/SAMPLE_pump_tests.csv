@@ -1,0 +1,5 @@
+﻿# SAMPLE - synthetic test data made by data_request/samples/make_samples.py. NOT Eastwater data: never use or present these numbers as real.
+pump_id,test_date,flow_m3_h,head_m,power_kw,efficiency_pct,speed_pct,source
+NPL2-01p,2025-11-20,1400,83,432,,,SAMPLE
+NPL3-02p,2025-11-21,2240,84,788,,,SAMPLE
+TM_Pond_01p,2025-11-22,2390,98,948,,,SAMPLE

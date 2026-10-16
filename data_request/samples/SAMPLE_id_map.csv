@@ -1,0 +1,10 @@
+﻿# SAMPLE - synthetic test data made by data_request/samples/make_samples.py. NOT Eastwater data: never use or present these numbers as real.
+epanet_id,element_type,client_tag,client_name,model_description,notes
+TM_Pond_01p,pump,TMP-P1,SAMPLE TM Pond pump 1,,
+TM_Pond_02p,pump,TMP-P2,SAMPLE TM Pond pump 2,,
+TM_Pond_03p,pump,TMP-P3,SAMPLE TM Pond pump 3,,
+TM_Pond_04p,pump,TMP-P4,SAMPLE TM Pond pump 4,,
+TM_Pond_05p,pump,TMP-P5,SAMPLE TM Pond pump 5,,
+TM_Pond_06p,pump,TMP-P6,SAMPLE TM Pond pump 6,,
+MTP-IEAT3,customer,EW-C-0012,SAMPLE customer,,
+NPL3_HT,tank,NPL3.HT.LVL,SAMPLE tag,,

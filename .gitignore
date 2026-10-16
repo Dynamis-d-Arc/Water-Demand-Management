@@ -4,3 +4,9 @@ __pycache__/
 *.mex*
 .DS_Store
 Thumbs.db
+
+# Eastwater data are under NDA and stay on this computer: the raw inbox and the
+# loader's outputs, including the synthetic SAMPLE_ runs
+data/eastwater/
+# Reports built from the synthetic SAMPLE set
+reports/*_SAMPLE.*

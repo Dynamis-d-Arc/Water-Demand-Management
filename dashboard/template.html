@@ -205,6 +205,14 @@ section { display: grid; gap: 18px; }
 .meter-val { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
 .meter-val span { display: block; font-size: 12px; color: var(--muted); font-weight: 400; }
 
+/* Lever comparison */
+.cmp { display: grid; gap: 12px; }
+.cmp-row { display: grid; gap: 5px; }
+.cmp-top { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; flex-wrap: wrap; }
+.cmp-top b { font-variant-numeric: tabular-nums; }
+.cmp-note { font-size: 12.5px; color: var(--muted); }
+.target { stroke: var(--ink-2); stroke-width: 1.5; }
+
 /* Tables */
 .tbl { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
@@ -215,7 +223,7 @@ tr.dim td { color: var(--muted); }
 
 /* Big figures inside cards */
 .figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
-.fig { display: grid; gap: 2px; }
+.fig { display: grid; gap: 2px; align-content: start; }
 .fig .v { font-size: 24px; font-weight: 600; line-height: 1.15; }
 .fig .v small { font-size: 13px; color: var(--ink-2); font-weight: 500; margin-left: 3px; }
 .fig .k { font-size: 13px; color: var(--ink-2); }
@@ -444,6 +452,40 @@ footer code { font-family: var(--mono); font-size: 12px; }
     </div>
   </section>
 
+  <section id="savings" aria-labelledby="h-sav">
+    <div class="sec-head">
+      <p class="eyebrow">Savings · Rayong model what-if</p>
+      <h2 id="h-sav">Where could pumping savings come from?</h2>
+      <p>Moving pumping to off-peak hours barely pays on this network. These what-if runs test the levers that do move the cost. Every plan is checked in EPANET; costs use the assumed tariff.</p>
+    </div>
+    <div class="grid">
+      <div class="card span-5" id="lever-card"></div>
+      <figure class="card span-7" style="margin:0">
+        <div class="card-head">
+          <div class="card-title"><h3>Off-peak saving by head-tank size, % of daily pumping cost</h3><p class="sub" id="sto-sub"></p></div>
+          <button class="tbl-btn" type="button" data-table="sto">Show data</button>
+        </div>
+        <div class="chart" id="sto" role="img" aria-label="Off-peak saving by head-tank size"></div>
+        <div class="tbl" id="tbl-sto" hidden></div>
+        <p class="callout" id="sto-msg"></p>
+      </figure>
+      <figure class="card span-12" style="margin:0">
+        <div class="card-head">
+          <div class="card-title"><h3>Energy per m³ by pump station and pumps running, kWh per m³</h3><p class="sub" id="cps-sub"></p></div>
+          <button class="tbl-btn" type="button" data-table="cps">Show data</button>
+        </div>
+        <div class="legend">
+          <span><i class="key-line c-s1"></i>NPL2</span>
+          <span><i class="key-line c-s2"></i>NPL3</span>
+          <span><i class="key-line c-s3"></i>TM Pond</span>
+        </div>
+        <div class="chart" id="cps" role="img" aria-label="Energy per m3 by pump station and pumps running"></div>
+        <div class="tbl" id="tbl-cps" hidden></div>
+        <p class="callout" id="cps-msg"></p>
+      </figure>
+    </div>
+  </section>
+
   <section id="next" aria-labelledby="h-next">
     <div class="sec-head">
       <p class="eyebrow">Roadmap</p>
@@ -457,6 +499,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
           <li><b>Choose one pilot area.</b> The reservoir data covers Chonburi; the network model covers Rayong. One area needs both.</li>
           <li><b>Confirm nodes 71 and 678.</b> They carry 100,000 m³/day each and decide whether the NPL3 zone is short of capacity.</li>
           <li><b>Confirm the TM Pond pumps.</b> Pumps 3 to 6 cannot run in the model. Are they standby or out of service?</li>
+          <li><b>Agree the lowest tank levels.</b> Holding NPL2_HT and NPL3_HT lower saves about 7.5% of pumping energy in the model, but keeps less water in reserve.</li>
           <li><b>Agree the KPIs.</b> Cost per m³, forecast error and planning time, measured before and after.</li>
         </ul>
       </div>
@@ -465,7 +508,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
         <ul>
           <li><b>Customer meter readings</b> for the 28 network customers: daily for 3 years and hourly for 3 months.</li>
           <li><b>SCADA records:</b> pump status, flow and power, tank levels and key pressures.</li>
-          <li><b>Electricity tariff and pump power data</b> to replace the assumed time-of-use prices.</li>
+          <li><b>Electricity tariff and pump power data</b> to replace the assumed time-of-use prices, plus efficiency tests for the NPL3 and TM Pond pumps.</li>
           <li><b>Allocation and contract changes</b> ahead of time; they drive demand more than weather does.</li>
         </ul>
       </div>
@@ -478,7 +521,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
       <li>Electricity cost uses an assumed weekday time-of-use tariff (<span id="f-tariff"></span>); replace it with the actual tariff before quoting costs.</li>
       <li>The network model has no daily demand pattern, so every hour carries the same demand.</li>
       <li>The outlook treats each past year's inflow as equally likely and assumes diversions follow the last three years' pattern.</li>
-      <li>Source files: <code>reports/matlab/supply_outlook.md</code>, <code>backtest_comparison.md</code>, <code>pump_plans.md</code>, <code>reports/epanet_check.md</code>, <code>reports/data_quality_bangphra.md</code>.</li>
+      <li>Source files: <code>reports/matlab/supply_outlook.md</code>, <code>backtest_comparison.md</code>, <code>pump_plans.md</code>, <code>whatif_storage_sources.md</code>, <code>reports/epanet_check.md</code>, <code>reports/data_quality_bangphra.md</code>.</li>
     </ul>
   </footer>
 </div>
@@ -637,7 +680,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
   });
 
   // ---------------------------------------------------------------- data shortcuts
-  const ST = D.storage, OUT = D.outlook, NET = D.network, ACC = D.accuracy;
+  const ST = D.storage, OUT = D.outlook, NET = D.network, ACC = D.accuracy, SAV = D.savings;
   const t0 = parseD(ST.asOf);
   const scenByKey = (dem, div) => OUT.scenarios.find(x => x.demand === dem && x.diversions === div);
   const base = scenByKey('recent', 'typical'), noDiv = scenByKey('recent', 'none');
@@ -653,6 +696,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
   const touRange = validTou.length ? [Math.min(...validTou.map(p => p.vsPct)), Math.max(...validTou.map(p => p.vsPct))] : null;
   const pctTxt = v => (v > 0 ? '+' : v < 0 ? '−' : '') + fmt(Math.abs(v), 1) + '%';
   const touSaving = touRange ? Math.max(0, -touRange[0]) : 0;
+  const stoBest = SAV.storage.reduce((a, b) => b.savingPct > a.savingPct ? b : a);
   const planName = p => p.schedule.startsWith('Reference') ? 'The lowest-energy reference' : p.schedule.split(' ').slice(0, 2).join(' ');
   const below = NET.nodes.filter(n => n[1] < NET.target);
   const acc1 = ACC.daily['PWA Chonburi'];
@@ -674,7 +718,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
       body: `Users drew ${fmt(pvaOf('All users').pct, 0)}% of the allocation plan this water year: PWA ${fmt(pvaOf('PWA Chonburi').pct, 0)}%, Eastwater ${fmt(pvaOf('Eastwater').pct, 0)}%. Next-day demand is forecast within ${fmt(acc1[0][1], 1)}%; known allocation changes are the next gain.` },
     { area: 'Network', kind: shortM3 > 0 ? 'critical' : 'good', chip: shortM3 > 0 ? 'Action needed' : 'Within capacity',
       title: shortM3 > 0 ? `The ${shortName.replace('_HT', '')} zone cannot meet the model's demand.` : 'The network meets the model demand.',
-      body: `At ${fmt(netModel.demand)} m³/day, every usable pump still leaves ${shortName} about ${fmt(r100(shortM3))} m³/day short. ${validTou.length ? `Moving pumping to off-peak hours saves ${touSaving < 0.5 ? 'almost nothing' : 'only ' + fmt(touSaving, 1) + '%'}` : 'No off-peak pumping plan both saved money and passed the hydraulic check'}: the head tanks hold about ${fmt(r100(NET.tankStorage))} m³, ${fmt(NET.tankMinutes.model_demand)} minutes of demand.` }
+      body: `At ${fmt(netModel.demand)} m³/day, every usable pump still leaves ${shortName} about ${fmt(r100(shortM3))} m³/day short. Off-peak pumping saves under ${fmt(Math.ceil(stoBest.savingPct), 0)}% even with ${stoBest.scale}× the tank storage. Holding the tanks lower cuts pumping energy by ${fmt(SAV.lever.energyPct, 1)}% in the model.` }
   ];
   const vbox = document.getElementById('verdicts');
   for (const v of verdicts) {
@@ -1073,7 +1117,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
       (validTou.length > 1 ? `Plans that shift pumping away from peak hours and pass every check cost ${range} against the lowest-energy plan.`
         : validTou.length === 1 ? `The one plan that shifts pumping away from peak hours and passes every check costs ${range} against the lowest-energy plan.`
         : 'No plan that shifts pumping away from peak hours passed every check.') +
-      ' The head tanks are too small to store water for later, so savings need upstream storage or more efficient pumps.' +
+      ' The head tanks are too small to store water for later; the next section shows the levers that do move the cost.' +
       (rejected.length ? ` ${rejected.join(' and ')} looked cheaper but failed the hydraulic check, so ${rejected.length > 1 ? 'they are' : 'it is'} not offered.` : '') +
       (refOk ? '' : ' The lowest-energy reference itself did not pass the check in this run, so the comparison is indicative only.');
   }
@@ -1136,12 +1180,112 @@ footer code { font-family: var(--mono); font-size: 12px; }
     });
   }
 
+  // ---------------------------------------------------------------- savings what-if
+  function renderLever() {
+    const L = SAV.lever, box = document.getElementById('lever-card');
+    box.append(h('div', { class: 'card-head' },
+      h('div', { class: 'card-title' }, h('h3', { text: 'Keep the head tanks lower' }),
+        h('p', { class: 'sub', text: `Today's tanks, ${fmt(netAlt.demand)} m³/day, one weekday. Both plans pass EPANET.` })),
+      chip('good', 'Biggest lever found')));
+    const max = Math.max(L.highKwh, L.lowKwh);
+    const row = (label, kwh, cost, note) => {
+      const m = h('div', { class: 'meter', role: 'img', 'aria-label': `${label}: ${fmt(kwh, 3)} kWh per m³` });
+      const i = h('i');
+      i.style.width = (100 * kwh / max) + '%';
+      m.append(i);
+      return h('div', { class: 'cmp-row' }, h('div', { class: 'cmp-top' }, h('span', { text: label }),
+        h('b', { text: `${fmt(kwh, 3)} kWh/m³ · ${fmt(cost)} THB/day` })), m, h('div', { class: 'cmp-note', text: note }));
+    };
+    box.append(h('div', { class: 'cmp' },
+      row('Tanks held near full', L.highKwh, L.highCost, 'Starts and ends the day 85% full (the pump plans above)'),
+      row('Tanks held only as full as pressure needs', L.lowKwh, L.lowCost,
+        `NPL2_HT ${L.levels.NPL2_HT[0]}–${L.levels.NPL2_HT[1]}% and NPL3_HT ${L.levels.NPL3_HT[0]}–${L.levels.NPL3_HT[1]}% full over the day`)));
+    const fig = (v, unit, k) => h('div', { class: 'fig' }, h('div', { class: 'v' }, v, unit ? h('small', { text: unit }) : null), h('div', { class: 'k', text: k }));
+    const figs = h('div', { class: 'figs' });
+    figs.append(fig('−' + fmt(L.energyPct, 1) + '%', null, 'Pumping energy'),
+      fig(fmt(r100(L.thbDay)), 'THB/day', `About ${fmt(L.thbDay * 365 / 1e6, 0)} million THB a year if every day matched this weekday`));
+    box.append(figs, h('p', { class: 'callout', text: 'No new assets are needed, but less water stays in reserve, so this is an operating decision. Eastwater must confirm the lowest tank levels it accepts before the saving can be counted.' }));
+  }
+  function drawStorage() {
+    const host = document.getElementById('sto');
+    const rows = SAV.storage, narrow = (host.clientWidth - 52) / rows.length < 130;
+    const top = Math.max(4, Math.ceil(Math.max(...rows.map(r => r.savingPct)) + 0.5));
+    const ticks = [];
+    for (let v = 0; v <= top; v += 1) ticks.push(v);
+    const f = frame(host, { height: 240, margin: { l: 36, r: 16, t: 16, b: 44 }, x: [0, rows.length], y: [0, top], yTicks: ticks,
+      yFmt: v => v + '%' });
+    const { g, x, y } = f;
+    s('line', { x1: f.m.l, x2: f.W - f.m.r, y1: y(3), y2: y(3), class: 'target' }, g);
+    stext(g, f.W - f.m.r, y(3) - 7, "Low end of the proposal's 3–5% target", { class: 'lbl', 'text-anchor': 'end' });
+    const band = x(1) - x(0), bw = Math.min(24, band * 0.5);
+    rows.forEach((r, i) => {
+      const cx = x(i + 0.5), by = y(Math.max(0, r.savingPct));
+      stext(g, cx, f.H - f.m.b + 18, r.scale === 1 ? '1× today' : r.scale + '×', { 'text-anchor': 'middle' });
+      stext(g, cx, f.H - f.m.b + 33, fmt(r.hours, 1) + (narrow ? ' h' : ' h of demand'), { 'text-anchor': 'middle' });
+      const p = s('path', { d: colPath(cx - bw / 2, by, bw, Math.max(1, y(0) - by), 4), class: 'f-s1 mark', tabindex: 0 }, g);
+      stext(g, cx, by - 7, fmt(r.savingPct, 1) + '%', { class: 'lbl-strong', 'text-anchor': 'middle' });
+      const tipFor = (ex, ey) => showTip(`${r.scale}× today's head tanks`, [
+        { cls: 'bg-s1', box: true, label: 'Off-peak saving', value: fmt(r.savingPct, 1) + '%' },
+        { label: 'Saving per day', value: fmt(r.savingThb) + ' THB' },
+        { label: 'Usable storage', value: fmt(r.volume) + ' m³' },
+        { label: 'Hours of demand', value: fmt(r.hours, 1) }], ex, ey);
+      p.addEventListener('pointermove', e => tipFor(e.clientX, e.clientY));
+      p.addEventListener('pointerleave', hideTip);
+      p.addEventListener('focus', () => { const [ax, ay] = anchorOf(f, cx, by); tipFor(ax, ay); });
+      p.addEventListener('blur', hideTip);
+    });
+    const big = rows[rows.length - 1];
+    document.getElementById('sto-sub').textContent = 'Saving of the cheapest tariff-aware plan against the lowest-energy plan for the same tanks; both pass EPANET. Under each size: hours of demand the tanks hold';
+    document.getElementById('sto-msg').textContent = `Even ${big.scale}× today's storage (${fmt(r100(big.volume))} m³) saves only ${fmt(big.savingPct, 1)}%. The pumps limit the shift: running more of them at once in off-peak hours raises the head they pump against, which uses up most of the cheaper rate.`;
+    table('sto', ['Head-tank size', 'Usable storage, m³', 'Hours of demand', 'Lowest-energy plan, THB/day', 'Cheapest tariff-aware plan, THB/day', 'Off-peak saving'],
+      rows.map(r => [r.scale + '×', fmt(r.volume), fmt(r.hours, 1), fmt(r.refCost), fmt(r.lowCost), fmt(r.savingPct, 1) + '%']), [1, 2, 3, 4, 5]);
+  }
+  function drawCps() {
+    const host = document.getElementById('cps');
+    const rows = SAV.stations;
+    const names = ['NPL2', 'NPL3', 'TM Pond'], lcls = ['ln-s1', 'ln-s2', 'ln-s3'], dcls = ['f-s1', 'f-s2', 'f-s3'], keys = ['c-s1', 'c-s2', 'c-s3'];
+    const series = names.map(n => rows.filter(r => r[0] === n));
+    const narrow = host.clientWidth < 560;
+    const lo = Math.floor(Math.min(...rows.map(r => r[2])) * 20) / 20, hi = Math.ceil(Math.max(...rows.map(r => r[2])) * 20) / 20;
+    const ticks = [];
+    for (let v = lo; v <= hi + 1e-9; v += 0.05) ticks.push(+v.toFixed(2));
+    const f = frame(host, { height: narrow ? 230 : 250, margin: { l: 46, r: narrow ? 14 : 104, t: 12, b: 30 }, x: [0.7, 6.3], y: [lo, hi],
+      yTicks: ticks, yFmt: v => v.toFixed(2), xTicks: [1, 2, 3, 4, 5, 6].map(v => ({ x: v, label: v === 1 ? '1 pump' : narrow ? String(v) : v + ' pumps' })) });
+    const { g, x, y } = f;
+    series.forEach((sr, j) => {
+      if (!sr.length) return;
+      s('path', { d: pathOf(sr.map(r => [x(r[1]), y(r[2])])), class: 'ln ' + lcls[j] }, g);
+      for (const r of sr) s('circle', { cx: x(r[1]), cy: y(r[2]), r: 4, class: dcls[j] + ' dot' }, g);
+      const l = sr[sr.length - 1];
+      if (!narrow) stext(g, x(l[1]) + 9, y(l[2]) + 4, `${names[j]} ${fmt(l[2], 3)}`, { class: 'lbl' });
+    });
+    const xh = s('line', { y1: f.m.t, y2: f.H - f.m.b, class: 'xhair', visibility: 'hidden' }, g);
+    let cur = 1;
+    function show(n, cx, cy) {
+      if (n == null) { xh.setAttribute('visibility', 'hidden'); return; }
+      cur = clamp(n, 1, 6);
+      xh.setAttribute('x1', x(cur)); xh.setAttribute('x2', x(cur)); xh.setAttribute('visibility', 'visible');
+      const at = series.map((sr, j) => [j, sr.find(r => r[1] === cur)]).filter(p => p[1]);
+      const tipRows = at.length ? at.map(([j, r]) => ({ cls: keys[j], label: names[j], value: `${fmt(r[2], 3)} kWh/m³ · ${fmt(r[3], 2)}–${fmt(r[4], 2)} THB/m³` }))
+        : [{ label: 'No station can run this many pumps', value: '' }];
+      if (cx == null) [cx, cy] = anchorOf(f, x(cur), y(at.length ? at[0][1][2] : lo));
+      showTip(`${cur} pump${cur > 1 ? 's' : ''} running`, tipRows, cx, cy);
+    }
+    hitLayer(f, (px, cx, cy) => show(px == null ? null : Math.round(x.inv(px)), cx, cy), d => show(d === 0 ? cur : cur + d));
+    const cheap = rows.reduce((a, b) => b[2] < a[2] ? b : a), dear = rows.reduce((a, b) => b[2] > a[2] ? b : a);
+    const withCurve = [...new Set(rows.filter(r => r[8] !== 'model global 75%').map(r => r[0]))];
+    document.getElementById('cps-sub').textContent = `Head tanks 85% full. ${withCurve.length ? withCurve.join(', ') + ' uses its pump efficiency curve; the others assume 75%' : 'All stations assume 75% efficiency'}. Tooltip range = off-peak to peak THB per m³ at the assumed tariff.`;
+    document.getElementById('cps-msg').textContent = `Cheapest: ${cheap[0]} with ${cheap[1]} pump${cheap[1] > 1 ? 's' : ''} at ${fmt(cheap[2], 3)} kWh/m³ (${fmt(cheap[3], 2)} THB/m³ off-peak). Dearest: ${dear[0]} with ${dear[1]} pumps at ${fmt(dear[2], 3)} kWh/m³ (${fmt(dear[3], 2)} THB/m³). Each extra pump costs more per m³, because more flow through the same mains needs more head. TM Pond lifts from a lower source, so it costs the most to run.`;
+    table('cps', ['Station', 'Pumps running', 'kWh per m³', 'THB per m³ off-peak', 'THB per m³ peak', 'Flow, m³/h', 'Pump head, m', 'Efficiency'],
+      rows.map(r => [r[0], String(r[1]), fmt(r[2], 3), fmt(r[3], 2), fmt(r[4], 2), fmt(r[5]), fmt(r[6], 1), fmt(r[7], 1) + '% ' + (r[8] === 'model global 75%' ? '(assumed)' : '(curve)')]), [1, 2, 3, 4, 5, 6, 7]);
+  }
+
   // ---------------------------------------------------------------- roadmap
   function renderRoad() {
     const steps = [
       { code: 'POC', title: 'Data and baseline', kind: 'good', chip: 'Done', text: '35 years of reservoir data cleaned and checked; network model runs; baseline cost and accuracy measured.' },
       { code: 'QW1', title: 'See demand ahead', kind: 'good', chip: 'Baseline ready', text: 'Daily and weekly forecasts tested. Next: customer meters and allocation changes as inputs.' },
-      { code: 'QW2', title: 'Lower pumping cost', kind: 'warning', chip: 'Prototype', text: 'Hour-by-hour pump plans work. Savings need the real tariff, pump data and upstream storage.' },
+      { code: 'QW2', title: 'Lower pumping cost', kind: 'warning', chip: 'Prototype', text: `Hour-by-hour pump plans work. Off-peak shifting saves under 1%; holding the tanks lower saves ${fmt(SAV.lever.energyPct, 1)}% in the model. Needs the real tariff, pump data and agreed tank levels.` },
       { code: 'QW3', title: 'Hydraulic check', kind: 'good', chip: 'Working', text: 'Every plan runs through EPANET and is graded pass, warning or fail before anyone sees it.' },
       { code: 'QW4', title: 'Decision dashboard', kind: 'neutral', chip: 'Draft', text: 'This page. Next: role views for operators and executives on live data.' }
     ];
@@ -1169,11 +1313,12 @@ footer code { font-family: var(--mono); font-size: 12px; }
   renderDemandText();
   renderCapacity();
   renderPlans();
+  renderLever();
   renderRoad();
   setupSchedules();
   describeScenario();
   const charts = [['fan', drawFan], ['hist', drawHist], ['demand-chart', drawDemand], ['acc-d', drawAccDemand],
-    ['acc-s', drawAccStorage], ['pressure', drawPressure], ['sched', drawSchedule]];
+    ['acc-s', drawAccStorage], ['pressure', drawPressure], ['sched', drawSchedule], ['sto', drawStorage], ['cps', drawCps]];
   for (const [id, fn] of charts) {
     fn();
     let last = document.getElementById(id).clientWidth, raf = 0;
