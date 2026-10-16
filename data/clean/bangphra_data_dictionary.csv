@@ -1,0 +1,34 @@
+﻿name,excel_col,unit,kind,blank_rule,thai_header,n_valid,first_valid,last_valid
+level_m_msl,B,m MSL,state,missing,ระดับน้ำในอ่าง ม.(รทก.),12871,1990-01-01,2025-03-28
+storage_mcm,C,MCM,state,missing,ปริมาณน้ำในอ่าง (ล้าน ลบ.ม.),12871,1990-01-01,2025-03-28
+area_km2,D,km2,state,missing,พื้นที่ผิวน้ำในอ่าง (ตร.กม.),12871,1990-01-01,2025-03-28
+rain_mm,E,mm,weather,zero,ฝนตกวัดได้ (มม.),12871,1990-01-01,2025-03-28
+rain_vol_m3,F,m3,inflow,zero,ปริมาณฝนในอ่าง (ลบ.ม.),12871,1990-01-01,2025-03-28
+evap_seepage_m3,G,m3,loss,missing,การระเหยและการรั่วซึม (ลบ.ม.),12871,1990-01-01,2025-03-28
+release_spillway_m3,H,m3,release,zero,ระบายน้ำออก: Spillway,12871,1990-01-01,2025-03-28
+release_river_outlet_m3,I,m3,release,zero,ระบายน้ำออก: River Outlet,12871,1990-01-01,2025-03-28
+release_canal_outlet_m3,J,m3,release,zero,ระบายน้ำออก: Canal Outlet,12871,1990-01-01,2025-03-28
+release_agriculture_m3,K,m3,release,zero,ปริมาณน้ำเพื่อการเกษตร,12871,1990-01-01,2025-03-28
+use_cassava_starch_m3,L,m3,use,zero,บ.แป้งมันสำประหลัง,12871,1990-01-01,2025-03-28
+use_panya_resort_m3,M,m3,use,zero,บ.ปัญญารีสอร์ท,12871,1990-01-01,2025-03-28
+use_siam_livestock_m3,N,m3,use,zero,บ.สยามปศุสัตว์,12871,1990-01-01,2025-03-28
+use_pwa_chonburi_m3,O,m3,use,missing,การประปาชลบุรี,12573,1990-01-01,2025-03-27
+use_thai_oil_m3,P,m3,use,zero,บ.โรงกลั่นน้ำมันไทย,12865,1990-01-01,2025-03-27
+use_fisheries_research_m3,Q,m3,use,zero,ศูนย์วิจัยและพัฒนาประมงน้ำจืด,12871,1990-01-01,2025-03-28
+use_egat_bangpakong_m3,R,m3,use,zero,การไฟฟ้าบางปะกง,12855,1990-01-01,2025-03-27
+use_eastwater_m3,S,m3,use,zero,EW,12869,1990-01-01,2025-03-27
+use_bangphra_golf_m3,T,m3,use,zero,บ.บางพระกอล์ฟฯ,12871,1990-01-01,2025-03-28
+use_private_1_m3,U,m3,use,zero,individual user (name in source header),12871,1990-01-01,2025-03-28
+use_bangkok_livestock_m3,V,m3,use,zero,บ.กรุงเทพค้าสัตว์,12871,1990-01-01,2025-03-28
+use_private_2_m3,W,m3,use,zero,individual user (name in source header),12871,1990-01-01,2025-03-28
+use_total_m3,X,m3,use_total,missing,รวมน้ำเพื่ออุปโภคและอุตสาหกรรม,12675,1990-01-01,2025-03-27
+div_in_bangpakong_m3,Y,m3,diversion,zero,ผันน้ำเข้า: น้ำที่สูบจากแม่น้ำบางปะกง,12871,1990-01-01,2025-03-28
+div_in_nongkho_release_m3,Z,m3,diversion,zero,ผันน้ำเข้า: น้ำที่ระบายจากหนองค้อ,12871,1990-01-01,2025-03-28
+div_in_nongkho_spillway_m3,AA,m3,diversion,zero,ผันน้ำเข้า: รับน้ำจาก Spillway หนองค้อ,12871,1990-01-01,2025-03-28
+div_in_phra_ong_m3,AB,m3,diversion,zero,ผันน้ำเข้า: น้ำที่สูบจากพระองค์ฯ,12871,1990-01-01,2025-03-28
+div_in_phan_thong_m3,AC,m3,diversion,zero,ผันน้ำเข้า: น้ำที่สูบจากพานทอง,12871,1990-01-01,2025-03-28
+outflow_total_m3,AD,m3,outflow,missing,รวมปริมาณน้ำทั้งหมด (OUTFLOW),12834,1990-01-01,2025-03-27
+runoff_in_clipped_m3,AE,m3,inflow,zero,"INFLOW FROM RUNOFF (incl. rain on reservoir, clipped at 0)",12871,1990-01-01,2025-03-28
+runoff_in_m3,AF,m3,inflow,zero,"INFLOW FROM RUNOFF (incl. rain on reservoir, balance residual)",12871,1990-01-01,2025-03-28
+div_in_total_m3,(derived),m3,derived,,,12871,1990-01-01,2025-03-28
+inflow_recalc_m3,(derived),m3,derived,,,12834,1990-01-01,2025-03-27

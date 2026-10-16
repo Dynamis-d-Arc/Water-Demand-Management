@@ -1,0 +1,657 @@
+date,column,flag,raw_value
+2004-03-06,use_thai_oil_m3,dash_as_zero,-
+2006-08-01,use_thai_oil_m3,dash_as_zero, -
+2006-08-02,use_thai_oil_m3,dash_as_zero, -
+2006-08-03,use_thai_oil_m3,dash_as_zero, -
+2006-08-04,use_thai_oil_m3,dash_as_zero, -
+2006-08-05,use_thai_oil_m3,dash_as_zero, -
+2006-08-06,use_thai_oil_m3,dash_as_zero, -
+2006-08-07,use_thai_oil_m3,dash_as_zero, -
+2006-08-08,use_thai_oil_m3,dash_as_zero, -
+2006-08-09,use_thai_oil_m3,dash_as_zero, -
+2006-08-11,use_thai_oil_m3,dash_as_zero, -
+2006-08-12,use_thai_oil_m3,dash_as_zero, -
+2006-08-13,use_thai_oil_m3,dash_as_zero, -
+2006-08-14,use_thai_oil_m3,dash_as_zero, -
+2006-08-15,use_thai_oil_m3,dash_as_zero, -
+2006-08-16,use_thai_oil_m3,dash_as_zero, -
+2006-08-17,use_thai_oil_m3,dash_as_zero, -
+2006-08-18,use_thai_oil_m3,dash_as_zero, -
+2006-08-19,use_thai_oil_m3,dash_as_zero, -
+2006-08-20,use_thai_oil_m3,dash_as_zero, -
+2006-08-21,use_thai_oil_m3,dash_as_zero, -
+2006-08-22,use_thai_oil_m3,dash_as_zero, -
+2006-08-23,use_thai_oil_m3,dash_as_zero, -
+2006-08-24,use_thai_oil_m3,dash_as_zero, -
+2006-08-25,use_thai_oil_m3,dash_as_zero, -
+2007-08-24,use_thai_oil_m3,dash_as_zero, -
+2007-08-25,use_thai_oil_m3,dash_as_zero, -
+2007-08-26,use_thai_oil_m3,dash_as_zero, -
+2008-08-17,use_thai_oil_m3,dash_as_zero, -   
+2008-08-29,use_thai_oil_m3,dash_as_zero,-
+2008-10-07,use_thai_oil_m3,dash_as_zero,-
+2009-08-13,use_thai_oil_m3,dash_as_zero, -   
+2009-08-15,use_thai_oil_m3,dash_as_zero, -   
+2009-08-27,use_thai_oil_m3,dash_as_zero, -   
+2009-08-28,use_thai_oil_m3,dash_as_zero, -   
+2009-08-29,use_thai_oil_m3,dash_as_zero, -   
+2009-08-30,use_thai_oil_m3,dash_as_zero, -   
+2009-08-31,use_thai_oil_m3,dash_as_zero, -   
+2010-08-03,use_thai_oil_m3,dash_as_zero, -   
+2010-08-06,use_thai_oil_m3,dash_as_zero, -   
+2010-08-07,use_thai_oil_m3,dash_as_zero, -   
+2011-11-06,use_thai_oil_m3,dash_as_zero, -
+2011-11-30,use_thai_oil_m3,dash_as_zero,-
+2011-12-01,use_thai_oil_m3,dash_as_zero,-
+2012-12-01,use_thai_oil_m3,dash_as_zero, -
+2012-12-02,use_thai_oil_m3,dash_as_zero, -
+2012-12-08,use_thai_oil_m3,dash_as_zero, -
+2012-12-15,use_thai_oil_m3,dash_as_zero, -
+2013-08-14,use_thai_oil_m3,dash_as_zero, -
+2013-08-18,use_thai_oil_m3,dash_as_zero, -
+2013-08-25,use_thai_oil_m3,dash_as_zero, -
+2013-12-12,use_thai_oil_m3,dash_as_zero, -
+2014-05-01,use_thai_oil_m3,dash_as_zero, -
+2014-05-02,use_thai_oil_m3,dash_as_zero, -
+2014-05-03,use_thai_oil_m3,dash_as_zero, -
+2014-05-05,use_thai_oil_m3,dash_as_zero, -
+2001-10-01,use_fisheries_research_m3,dash_as_zero,-
+2001-10-02,use_fisheries_research_m3,dash_as_zero,-
+2001-10-03,use_fisheries_research_m3,dash_as_zero,-
+2001-10-04,use_fisheries_research_m3,dash_as_zero,-
+2001-10-05,use_fisheries_research_m3,dash_as_zero,-
+2001-10-06,use_fisheries_research_m3,dash_as_zero,-
+2001-10-07,use_fisheries_research_m3,dash_as_zero,-
+2001-10-08,use_fisheries_research_m3,dash_as_zero,-
+2001-10-09,use_fisheries_research_m3,dash_as_zero,-
+2001-10-10,use_fisheries_research_m3,dash_as_zero,-
+2001-10-11,use_fisheries_research_m3,dash_as_zero,-
+2001-10-12,use_fisheries_research_m3,dash_as_zero,-
+2001-10-13,use_fisheries_research_m3,dash_as_zero,-
+2001-10-14,use_fisheries_research_m3,dash_as_zero,-
+2001-10-15,use_fisheries_research_m3,dash_as_zero,-
+2001-10-16,use_fisheries_research_m3,dash_as_zero,-
+2001-10-17,use_fisheries_research_m3,dash_as_zero,-
+2001-10-18,use_fisheries_research_m3,dash_as_zero,-
+2001-10-19,use_fisheries_research_m3,dash_as_zero,-
+2001-10-20,use_fisheries_research_m3,dash_as_zero,-
+2001-10-21,use_fisheries_research_m3,dash_as_zero,-
+2001-10-22,use_fisheries_research_m3,dash_as_zero,-
+2001-10-23,use_fisheries_research_m3,dash_as_zero,-
+2001-10-24,use_fisheries_research_m3,dash_as_zero,-
+2001-10-25,use_fisheries_research_m3,dash_as_zero,-
+2001-10-26,use_fisheries_research_m3,dash_as_zero,-
+2001-10-27,use_fisheries_research_m3,dash_as_zero,-
+2001-10-28,use_fisheries_research_m3,dash_as_zero,-
+2001-10-29,use_fisheries_research_m3,dash_as_zero,-
+2001-10-30,use_fisheries_research_m3,dash_as_zero,-
+2001-10-31,use_fisheries_research_m3,dash_as_zero,-
+2009-08-02,use_fisheries_research_m3,dash_as_zero, -   
+2001-10-04,use_egat_bangpakong_m3,dash_as_zero,-
+2006-06-05,use_egat_bangpakong_m3,dash_as_zero, -   
+2006-08-20,use_egat_bangpakong_m3,dash_as_zero, -
+2008-08-15,use_egat_bangpakong_m3,dash_as_zero,-
+2009-08-01,use_egat_bangpakong_m3,dash_as_zero, -   
+2009-08-12,use_egat_bangpakong_m3,dash_as_zero, -   
+2009-08-25,use_egat_bangpakong_m3,dash_as_zero, -   
+2009-08-26,use_egat_bangpakong_m3,dash_as_zero, -   
+2009-08-27,use_egat_bangpakong_m3,dash_as_zero, -   
+2009-08-28,use_egat_bangpakong_m3,dash_as_zero, -   
+2009-08-29,use_egat_bangpakong_m3,dash_as_zero, -   
+2012-12-08,use_egat_bangpakong_m3,dash_as_zero, -
+2012-12-10,use_egat_bangpakong_m3,dash_as_zero, -
+2012-12-11,use_egat_bangpakong_m3,dash_as_zero, -
+2012-12-12,use_egat_bangpakong_m3,dash_as_zero, -
+2012-12-13,use_egat_bangpakong_m3,dash_as_zero, -
+2013-11-03,use_egat_bangpakong_m3,dash_as_zero, -
+2013-11-04,use_egat_bangpakong_m3,dash_as_zero, -
+2013-12-12,use_egat_bangpakong_m3,dash_as_zero, -
+2016-01-16,use_egat_bangpakong_m3,dash_as_zero,.
+2011-08-10,use_eastwater_m3,dash_as_zero, -
+2011-08-11,use_eastwater_m3,dash_as_zero, -
+2011-08-12,use_eastwater_m3,dash_as_zero, -
+2011-08-13,use_eastwater_m3,dash_as_zero, -
+2025-03-28,use_pwa_chonburi_m3,negative_flow,-12114361.0
+2021-01-07,use_thai_oil_m3,negative_flow,-3655.0
+2025-03-28,use_thai_oil_m3,negative_flow,-5019587.0
+2016-10-01,use_egat_bangpakong_m3,negative_flow,-78.0
+2017-07-24,use_egat_bangpakong_m3,negative_flow,-30073.0
+2017-09-27,use_egat_bangpakong_m3,negative_flow,-4910.0
+2018-03-17,use_egat_bangpakong_m3,negative_flow,-7889.0
+2018-11-21,use_egat_bangpakong_m3,negative_flow,-861425.0
+2025-03-28,use_egat_bangpakong_m3,negative_flow,-444262.0
+2016-07-08,use_eastwater_m3,negative_flow,-15879.0
+2025-03-28,use_eastwater_m3,negative_flow,-98917100.0
+2018-11-21,use_total_m3,negative_flow,-712832.0
+2025-03-28,use_total_m3,negative_flow,-116489310.0
+2018-11-21,outflow_total_m3,negative_flow,-627220.0
+2025-03-28,outflow_total_m3,negative_flow,-116425399.0
+1992-07-26,use_total_m3,component_invalid,11033.0
+1992-07-30,use_total_m3,component_invalid,10722.0
+1992-08-01,use_total_m3,component_invalid,12075.0
+1992-08-02,use_total_m3,component_invalid,6585.0
+1998-04-18,use_total_m3,component_invalid,9792.0
+2000-11-02,use_total_m3,component_invalid,12976.0
+2001-12-01,use_total_m3,component_invalid,69416.0
+2001-12-02,use_total_m3,component_invalid,66521.0
+2001-12-03,use_total_m3,component_invalid,66750.0
+2001-12-04,use_total_m3,component_invalid,66295.0
+2001-12-05,use_total_m3,component_invalid,65386.0
+2001-12-06,use_total_m3,component_invalid,62225.0
+2001-12-07,use_total_m3,component_invalid,60253.0
+2001-12-08,use_total_m3,component_invalid,60098.0
+2001-12-09,use_total_m3,component_invalid,63016.0
+2001-12-10,use_total_m3,component_invalid,60772.0
+2001-12-11,use_total_m3,component_invalid,61859.0
+2001-12-12,use_total_m3,component_invalid,63857.0
+2001-12-13,use_total_m3,component_invalid,63469.0
+2001-12-14,use_total_m3,component_invalid,65768.0
+2001-12-15,use_total_m3,component_invalid,66305.0
+2001-12-16,use_total_m3,component_invalid,62583.0
+2001-12-17,use_total_m3,component_invalid,71266.0
+2001-12-18,use_total_m3,component_invalid,63516.0
+2001-12-19,use_total_m3,component_invalid,66093.0
+2001-12-20,use_total_m3,component_invalid,68035.0
+2001-12-21,use_total_m3,component_invalid,58781.0
+2008-01-31,use_total_m3,component_invalid,0.0
+2014-12-31,use_total_m3,component_invalid,0.0
+2016-07-08,use_total_m3,component_invalid,97751.0
+2016-10-01,use_total_m3,component_invalid,126608.0
+2017-07-24,use_total_m3,component_invalid,155965.0
+2017-09-27,use_total_m3,component_invalid,271448.0
+2018-03-17,use_total_m3,component_invalid,325466.0
+2021-01-07,use_total_m3,component_invalid,203090.0
+1992-07-26,outflow_total_m3,component_invalid,35612.755999999994
+1992-07-30,outflow_total_m3,component_invalid,37913.51699999999
+1992-08-01,outflow_total_m3,component_invalid,42356.5
+1992-08-02,outflow_total_m3,component_invalid,38130.2
+1998-04-18,outflow_total_m3,component_invalid,72832.722
+2000-11-02,outflow_total_m3,component_invalid,63891.57
+2001-12-01,outflow_total_m3,component_invalid,110535.0
+2001-12-02,outflow_total_m3,component_invalid,107579.5
+2001-12-03,outflow_total_m3,component_invalid,107748.5
+2001-12-04,outflow_total_m3,component_invalid,107233.0
+2001-12-05,outflow_total_m3,component_invalid,106324.0
+2001-12-06,outflow_total_m3,component_invalid,103103.0
+2001-12-07,outflow_total_m3,component_invalid,101131.0
+2001-12-08,outflow_total_m3,component_invalid,100915.5
+2001-12-09,outflow_total_m3,component_invalid,103773.5
+2001-12-10,outflow_total_m3,component_invalid,101469.0
+2001-12-11,outflow_total_m3,component_invalid,134801.5
+2001-12-12,outflow_total_m3,component_invalid,136632.0
+2001-12-13,outflow_total_m3,component_invalid,109297.5
+2001-12-14,outflow_total_m3,component_invalid,106163.0
+2001-12-15,outflow_total_m3,component_invalid,106639.5
+2001-12-16,outflow_total_m3,component_invalid,102857.0
+2001-12-17,outflow_total_m3,component_invalid,111480.0
+2001-12-18,outflow_total_m3,component_invalid,135791.0
+2001-12-19,outflow_total_m3,component_invalid,138283.5
+2001-12-20,outflow_total_m3,component_invalid,108066.5
+2001-12-21,outflow_total_m3,component_invalid,98752.0
+2008-01-31,outflow_total_m3,component_invalid,50475.84
+2014-12-31,outflow_total_m3,component_invalid,57565.0
+2016-07-08,outflow_total_m3,component_invalid,123339.23
+2016-10-01,outflow_total_m3,component_invalid,174643.25
+2017-07-24,outflow_total_m3,component_invalid,224737.47999999998
+2017-09-27,outflow_total_m3,component_invalid,342283.11
+2018-03-17,outflow_total_m3,component_invalid,411078.0
+2021-01-07,outflow_total_m3,component_invalid,276988.4
+1996-03-03,level_m_msl,level_jump,-3.0
+1996-03-04,level_m_msl,level_jump,2.9899999999999984
+2003-02-02,level_m_msl,level_jump,29.990000000000002
+2003-02-03,level_m_msl,level_jump,-30.000000000000004
+2004-08-09,level_m_msl,level_jump,29.99
+2004-08-10,level_m_msl,level_jump,-30.009999999999998
+2004-12-06,level_m_msl,level_jump,-1.0199999999999996
+2004-12-11,level_m_msl,level_jump,-1.0200000000000031
+2005-09-15,level_m_msl,level_jump,1.0199999999999996
+2006-06-11,level_m_msl,level_jump,-0.9800000000000004
+2006-06-15,level_m_msl,level_jump,1.0100000000000016
+2008-05-29,level_m_msl,level_jump,2.9899999999999984
+2008-05-30,level_m_msl,level_jump,-3.009999999999998
+2011-03-07,level_m_msl,level_jump,-1.009999999999998
+2012-10-15,level_m_msl,level_jump,-9.979999999999997
+2012-10-16,level_m_msl,level_jump,10.02
+2013-09-15,level_m_msl,level_jump,18.009999999999998
+2013-09-17,level_m_msl,level_jump,-18.02
+2006-08-03,use_total_m3,zero_in_continuous_series,0.0
+2001-12-22,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-23,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-24,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-25,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-26,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-27,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-28,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-29,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-30,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2001-12-31,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2006-08-03,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2016-11-01,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+2016-11-02,use_pwa_chonburi_m3,zero_in_continuous_series,0.0
+1990-08-28,use_total_m3,outlier_hampel,43651.0
+1990-08-29,use_total_m3,outlier_hampel,98112.0
+1990-09-13,use_total_m3,outlier_hampel,47177.0
+1990-09-28,use_total_m3,outlier_hampel,37677.0
+1990-10-04,use_total_m3,outlier_hampel,40169.0
+1990-10-18,use_total_m3,outlier_hampel,84670.0
+1991-06-27,use_total_m3,outlier_hampel,39665.0
+1991-07-09,use_total_m3,outlier_hampel,39450.0
+1991-07-15,use_total_m3,outlier_hampel,34961.0
+1991-09-07,use_total_m3,outlier_hampel,39315.0
+1991-09-08,use_total_m3,outlier_hampel,40597.0
+1992-07-15,use_total_m3,outlier_hampel,28648.0
+1992-08-28,use_total_m3,outlier_hampel,16541.0
+1993-05-24,use_total_m3,outlier_hampel,46599.0
+1993-08-13,use_total_m3,outlier_hampel,26087.0
+1993-08-15,use_total_m3,outlier_hampel,17017.0
+1993-09-02,use_total_m3,outlier_hampel,34593.0
+1993-10-19,use_total_m3,outlier_hampel,30468.0
+1993-12-17,use_total_m3,outlier_hampel,47272.0
+1994-08-04,use_total_m3,outlier_hampel,31695.0
+1994-10-09,use_total_m3,outlier_hampel,27830.0
+1995-01-19,use_total_m3,outlier_hampel,43459.0
+1995-03-28,use_total_m3,outlier_hampel,52948.0
+1995-05-13,use_total_m3,outlier_hampel,54561.0
+1995-05-14,use_total_m3,outlier_hampel,39803.0
+1995-06-29,use_total_m3,outlier_hampel,41183.0
+1995-11-15,use_total_m3,outlier_hampel,41406.0
+1995-11-16,use_total_m3,outlier_hampel,47896.0
+1996-03-14,use_total_m3,outlier_hampel,43406.0
+1996-07-31,use_total_m3,outlier_hampel,97796.0
+1996-08-28,use_total_m3,outlier_hampel,53476.0
+1996-11-05,use_total_m3,outlier_hampel,106372.0
+1997-02-19,use_total_m3,outlier_hampel,46106.0
+1997-03-29,use_total_m3,outlier_hampel,16666.0
+1997-05-01,use_total_m3,outlier_hampel,29803.0
+1998-01-16,use_total_m3,outlier_hampel,122463.0
+1998-02-23,use_total_m3,outlier_hampel,163126.0
+1998-06-06,use_total_m3,outlier_hampel,138183.0
+1998-06-07,use_total_m3,outlier_hampel,21145.0
+1998-07-31,use_total_m3,outlier_hampel,130767.0
+1998-08-28,use_total_m3,outlier_hampel,40367.0
+1998-08-29,use_total_m3,outlier_hampel,176754.0
+1998-09-17,use_total_m3,outlier_hampel,110542.0
+1998-09-23,use_total_m3,outlier_hampel,113783.0
+1998-09-24,use_total_m3,outlier_hampel,108649.0
+1998-09-25,use_total_m3,outlier_hampel,141846.0
+1998-09-28,use_total_m3,outlier_hampel,108314.0
+1998-09-29,use_total_m3,outlier_hampel,106492.0
+1998-11-18,use_total_m3,outlier_hampel,138567.0
+1998-12-24,use_total_m3,outlier_hampel,162023.0
+1998-12-25,use_total_m3,outlier_hampel,113687.0
+1998-12-30,use_total_m3,outlier_hampel,145227.0
+1999-02-18,use_total_m3,outlier_hampel,140268.0
+1999-02-24,use_total_m3,outlier_hampel,113020.0
+1999-02-25,use_total_m3,outlier_hampel,111099.0
+1999-02-26,use_total_m3,outlier_hampel,135046.0
+1999-02-27,use_total_m3,outlier_hampel,112576.0
+1999-03-07,use_total_m3,outlier_hampel,53527.0
+1999-03-26,use_total_m3,outlier_hampel,140090.0
+1999-04-08,use_total_m3,outlier_hampel,133347.0
+1999-05-12,use_total_m3,outlier_hampel,112979.0
+1999-05-21,use_total_m3,outlier_hampel,135723.0
+1999-05-28,use_total_m3,outlier_hampel,112009.0
+1999-05-29,use_total_m3,outlier_hampel,114217.0
+1999-07-09,use_total_m3,outlier_hampel,138467.0
+1999-07-22,use_total_m3,outlier_hampel,136184.0
+1999-08-12,use_total_m3,outlier_hampel,177651.0
+1999-09-16,use_total_m3,outlier_hampel,157635.0
+1999-09-17,use_total_m3,outlier_hampel,114032.0
+1999-09-18,use_total_m3,outlier_hampel,113244.0
+1999-09-20,use_total_m3,outlier_hampel,113754.0
+1999-10-18,use_total_m3,outlier_hampel,50197.0
+1999-10-20,use_total_m3,outlier_hampel,191662.0
+1999-10-21,use_total_m3,outlier_hampel,110941.0
+2000-01-21,use_total_m3,outlier_hampel,141891.0
+2000-02-07,use_total_m3,outlier_hampel,27707.0
+2000-02-10,use_total_m3,outlier_hampel,142445.0
+2000-03-16,use_total_m3,outlier_hampel,113436.0
+2000-03-17,use_total_m3,outlier_hampel,164341.0
+2000-03-18,use_total_m3,outlier_hampel,112514.0
+2000-03-19,use_total_m3,outlier_hampel,111903.0
+2000-03-20,use_total_m3,outlier_hampel,111835.0
+2000-03-30,use_total_m3,outlier_hampel,140065.0
+2000-03-31,use_total_m3,outlier_hampel,113746.0
+2000-06-09,use_total_m3,outlier_hampel,144468.0
+2000-06-26,use_total_m3,outlier_hampel,18233.0
+2000-07-07,use_total_m3,outlier_hampel,154257.0
+2000-11-01,use_total_m3,outlier_hampel,10538.0
+2001-10-04,use_total_m3,outlier_hampel,28658.0
+2002-01-31,use_total_m3,outlier_hampel,26893.0
+2002-02-01,use_total_m3,outlier_hampel,106067.0
+2002-05-20,use_total_m3,outlier_hampel,95415.0
+2002-07-31,use_total_m3,outlier_hampel,88576.0
+2002-08-19,use_total_m3,outlier_hampel,87233.0
+2002-09-23,use_total_m3,outlier_hampel,91848.0
+2002-12-04,use_total_m3,outlier_hampel,22693.0
+2002-12-17,use_total_m3,outlier_hampel,24821.0
+2003-09-12,use_total_m3,outlier_hampel,40877.0
+2004-03-15,use_total_m3,outlier_hampel,105309.0
+2004-08-14,use_total_m3,outlier_hampel,41489.0
+2004-08-21,use_total_m3,outlier_hampel,37543.0
+2004-10-13,use_total_m3,outlier_hampel,36749.0
+2004-11-01,use_total_m3,outlier_hampel,13521.0
+2004-11-02,use_total_m3,outlier_hampel,14153.0
+2005-01-11,use_total_m3,outlier_hampel,30132.0
+2005-01-12,use_total_m3,outlier_hampel,115011.0
+2005-02-07,use_total_m3,outlier_hampel,10221.0
+2005-02-11,use_total_m3,outlier_hampel,39757.0
+2005-02-13,use_total_m3,outlier_hampel,38676.0
+2007-03-30,use_total_m3,outlier_hampel,102275.0
+2007-03-31,use_total_m3,outlier_hampel,41900.0
+2007-12-06,use_total_m3,outlier_hampel,29317.0
+2008-01-07,use_total_m3,outlier_hampel,42662.0
+2009-07-31,use_total_m3,outlier_hampel,172189.0
+2009-08-01,use_total_m3,outlier_hampel,63601.0
+2009-08-20,use_total_m3,outlier_hampel,156085.0
+2009-10-18,use_total_m3,outlier_hampel,152064.0
+2010-05-06,use_total_m3,outlier_hampel,169993.0
+2010-10-21,use_total_m3,outlier_hampel,40152.0
+2010-12-15,use_total_m3,outlier_hampel,6775.0
+2010-12-16,use_total_m3,outlier_hampel,3721.0
+2010-12-17,use_total_m3,outlier_hampel,3635.0
+2011-05-26,use_total_m3,outlier_hampel,83011.0
+2011-08-31,use_total_m3,outlier_hampel,123729.0
+2011-10-14,use_total_m3,outlier_hampel,157775.0
+2012-02-11,use_total_m3,outlier_hampel,140657.0
+2012-03-11,use_total_m3,outlier_hampel,97882.0
+2012-04-01,use_total_m3,outlier_hampel,173483.0
+2012-05-10,use_total_m3,outlier_hampel,146543.0
+2012-08-01,use_total_m3,outlier_hampel,141412.0
+2012-12-02,use_total_m3,outlier_hampel,90992.0
+2013-01-07,use_total_m3,outlier_hampel,52347.0
+2013-07-28,use_total_m3,outlier_hampel,70724.0
+2013-12-10,use_total_m3,outlier_hampel,168983.0
+2014-08-30,use_total_m3,outlier_hampel,106388.0
+2015-08-14,use_total_m3,outlier_hampel,71348.0
+2015-08-20,use_total_m3,outlier_hampel,304225.0
+2015-10-05,use_total_m3,outlier_hampel,322308.0
+2016-02-27,use_total_m3,outlier_hampel,229322.0
+2016-02-28,use_total_m3,outlier_hampel,215217.0
+2016-03-31,use_total_m3,outlier_hampel,99046.0
+2016-04-22,use_total_m3,outlier_hampel,207329.0
+2017-07-25,use_total_m3,outlier_hampel,126257.0
+2017-09-10,use_total_m3,outlier_hampel,422658.0
+2017-11-03,use_total_m3,outlier_hampel,104082.0
+2017-11-04,use_total_m3,outlier_hampel,154603.0
+2017-11-07,use_total_m3,outlier_hampel,139744.0
+2017-11-09,use_total_m3,outlier_hampel,162018.0
+2019-01-02,use_total_m3,outlier_hampel,471828.0
+2019-04-09,use_total_m3,outlier_hampel,207203.0
+2019-07-20,use_total_m3,outlier_hampel,95071.0
+2019-08-06,use_total_m3,outlier_hampel,110228.0
+2019-08-10,use_total_m3,outlier_hampel,232704.0
+2019-10-01,use_total_m3,outlier_hampel,9245460.65
+2019-12-31,use_total_m3,outlier_hampel,140753.0
+2020-01-01,use_total_m3,outlier_hampel,115642.0
+2020-01-02,use_total_m3,outlier_hampel,145690.0
+2021-12-05,use_total_m3,outlier_hampel,221736.0
+1990-08-28,use_pwa_chonburi_m3,outlier_hampel,29900.0
+1990-08-29,use_pwa_chonburi_m3,outlier_hampel,82800.0
+1990-09-13,use_pwa_chonburi_m3,outlier_hampel,37800.0
+1990-09-28,use_pwa_chonburi_m3,outlier_hampel,29335.0
+1990-10-04,use_pwa_chonburi_m3,outlier_hampel,30800.0
+1990-10-18,use_pwa_chonburi_m3,outlier_hampel,77900.0
+1991-06-27,use_pwa_chonburi_m3,outlier_hampel,29100.0
+1991-07-09,use_pwa_chonburi_m3,outlier_hampel,29300.0
+1991-07-15,use_pwa_chonburi_m3,outlier_hampel,25300.0
+1991-09-07,use_pwa_chonburi_m3,outlier_hampel,32200.0
+1991-09-08,use_pwa_chonburi_m3,outlier_hampel,34300.0
+1991-11-12,use_pwa_chonburi_m3,outlier_hampel,23600.0
+1991-11-13,use_pwa_chonburi_m3,outlier_hampel,23600.0
+1992-02-08,use_pwa_chonburi_m3,outlier_hampel,70000.0
+1992-02-09,use_pwa_chonburi_m3,outlier_hampel,29300.0
+1992-07-15,use_pwa_chonburi_m3,outlier_hampel,24800.0
+1992-08-28,use_pwa_chonburi_m3,outlier_hampel,4200.0
+1993-08-13,use_pwa_chonburi_m3,outlier_hampel,18400.0
+1993-08-15,use_pwa_chonburi_m3,outlier_hampel,11400.0
+1993-09-02,use_pwa_chonburi_m3,outlier_hampel,32700.0
+1993-09-03,use_pwa_chonburi_m3,outlier_hampel,43300.0
+1993-10-19,use_pwa_chonburi_m3,outlier_hampel,16100.0
+1993-12-17,use_pwa_chonburi_m3,outlier_hampel,40700.0
+1994-08-04,use_pwa_chonburi_m3,outlier_hampel,24200.0
+1994-10-09,use_pwa_chonburi_m3,outlier_hampel,22400.0
+1995-01-19,use_pwa_chonburi_m3,outlier_hampel,38700.0
+1995-03-28,use_pwa_chonburi_m3,outlier_hampel,48000.0
+1995-05-13,use_pwa_chonburi_m3,outlier_hampel,50000.0
+1995-05-14,use_pwa_chonburi_m3,outlier_hampel,35000.0
+1995-06-29,use_pwa_chonburi_m3,outlier_hampel,38100.0
+1995-11-15,use_pwa_chonburi_m3,outlier_hampel,33900.0
+1995-11-16,use_pwa_chonburi_m3,outlier_hampel,41300.0
+1996-03-14,use_pwa_chonburi_m3,outlier_hampel,29900.0
+1996-03-30,use_pwa_chonburi_m3,outlier_hampel,91400.0
+1996-05-30,use_pwa_chonburi_m3,outlier_hampel,85400.0
+1996-07-31,use_pwa_chonburi_m3,outlier_hampel,89300.0
+1996-08-28,use_pwa_chonburi_m3,outlier_hampel,46900.0
+1996-08-30,use_pwa_chonburi_m3,outlier_hampel,91200.0
+1996-08-31,use_pwa_chonburi_m3,outlier_hampel,89400.0
+1996-10-31,use_pwa_chonburi_m3,outlier_hampel,93200.0
+1996-11-03,use_pwa_chonburi_m3,outlier_hampel,92500.0
+1996-11-04,use_pwa_chonburi_m3,outlier_hampel,93000.0
+1996-11-05,use_pwa_chonburi_m3,outlier_hampel,96200.0
+1996-12-31,use_pwa_chonburi_m3,outlier_hampel,96500.0
+1997-03-29,use_pwa_chonburi_m3,outlier_hampel,13100.0
+1997-05-01,use_pwa_chonburi_m3,outlier_hampel,17100.0
+1998-01-16,use_pwa_chonburi_m3,outlier_hampel,112700.0
+1998-02-23,use_pwa_chonburi_m3,outlier_hampel,152300.0
+1998-06-06,use_pwa_chonburi_m3,outlier_hampel,131700.0
+1998-06-07,use_pwa_chonburi_m3,outlier_hampel,11900.0
+1998-06-17,use_pwa_chonburi_m3,outlier_hampel,32500.0
+1998-08-26,use_pwa_chonburi_m3,outlier_hampel,100800.0
+1998-08-27,use_pwa_chonburi_m3,outlier_hampel,96700.0
+1998-08-28,use_pwa_chonburi_m3,outlier_hampel,29500.0
+1998-08-29,use_pwa_chonburi_m3,outlier_hampel,165900.0
+1998-08-30,use_pwa_chonburi_m3,outlier_hampel,97100.0
+1998-08-31,use_pwa_chonburi_m3,outlier_hampel,100500.0
+1998-09-17,use_pwa_chonburi_m3,outlier_hampel,98600.0
+1998-09-23,use_pwa_chonburi_m3,outlier_hampel,103200.0
+1998-09-24,use_pwa_chonburi_m3,outlier_hampel,94500.0
+1998-09-25,use_pwa_chonburi_m3,outlier_hampel,129000.0
+1998-09-28,use_pwa_chonburi_m3,outlier_hampel,99900.0
+1998-09-29,use_pwa_chonburi_m3,outlier_hampel,96900.0
+1998-10-21,use_pwa_chonburi_m3,outlier_hampel,96500.0
+1998-10-23,use_pwa_chonburi_m3,outlier_hampel,95800.0
+1998-11-18,use_pwa_chonburi_m3,outlier_hampel,123800.0
+1998-12-24,use_pwa_chonburi_m3,outlier_hampel,148500.0
+1998-12-25,use_pwa_chonburi_m3,outlier_hampel,100500.0
+1998-12-30,use_pwa_chonburi_m3,outlier_hampel,129200.0
+1999-02-18,use_pwa_chonburi_m3,outlier_hampel,127700.0
+1999-02-24,use_pwa_chonburi_m3,outlier_hampel,102600.0
+1999-02-25,use_pwa_chonburi_m3,outlier_hampel,100100.0
+1999-02-26,use_pwa_chonburi_m3,outlier_hampel,124700.0
+1999-02-27,use_pwa_chonburi_m3,outlier_hampel,99300.0
+1999-03-07,use_pwa_chonburi_m3,outlier_hampel,39000.0
+1999-03-18,use_pwa_chonburi_m3,outlier_hampel,98000.0
+1999-03-19,use_pwa_chonburi_m3,outlier_hampel,99500.0
+1999-03-26,use_pwa_chonburi_m3,outlier_hampel,130600.0
+1999-04-08,use_pwa_chonburi_m3,outlier_hampel,123000.0
+1999-05-12,use_pwa_chonburi_m3,outlier_hampel,100100.0
+1999-05-21,use_pwa_chonburi_m3,outlier_hampel,124800.0
+1999-05-28,use_pwa_chonburi_m3,outlier_hampel,99200.0
+1999-05-29,use_pwa_chonburi_m3,outlier_hampel,99600.0
+1999-05-30,use_pwa_chonburi_m3,outlier_hampel,94000.0
+1999-05-31,use_pwa_chonburi_m3,outlier_hampel,99400.0
+1999-06-10,use_pwa_chonburi_m3,outlier_hampel,100100.0
+1999-06-11,use_pwa_chonburi_m3,outlier_hampel,99400.0
+1999-06-22,use_pwa_chonburi_m3,outlier_hampel,98600.0
+1999-06-23,use_pwa_chonburi_m3,outlier_hampel,99500.0
+1999-06-24,use_pwa_chonburi_m3,outlier_hampel,99700.0
+1999-06-28,use_pwa_chonburi_m3,outlier_hampel,98200.0
+1999-06-29,use_pwa_chonburi_m3,outlier_hampel,98500.0
+1999-06-30,use_pwa_chonburi_m3,outlier_hampel,99300.0
+1999-07-09,use_pwa_chonburi_m3,outlier_hampel,126300.0
+1999-07-10,use_pwa_chonburi_m3,outlier_hampel,102500.0
+1999-07-21,use_pwa_chonburi_m3,outlier_hampel,96500.0
+1999-07-22,use_pwa_chonburi_m3,outlier_hampel,126100.0
+1999-08-12,use_pwa_chonburi_m3,outlier_hampel,164700.0
+1999-08-24,use_pwa_chonburi_m3,outlier_hampel,97200.0
+1999-08-29,use_pwa_chonburi_m3,outlier_hampel,94700.0
+1999-08-30,use_pwa_chonburi_m3,outlier_hampel,96600.0
+1999-08-31,use_pwa_chonburi_m3,outlier_hampel,96100.0
+1999-09-16,use_pwa_chonburi_m3,outlier_hampel,145100.0
+1999-09-17,use_pwa_chonburi_m3,outlier_hampel,102100.0
+1999-09-18,use_pwa_chonburi_m3,outlier_hampel,99200.0
+1999-09-19,use_pwa_chonburi_m3,outlier_hampel,93800.0
+1999-09-20,use_pwa_chonburi_m3,outlier_hampel,98900.0
+1999-10-17,use_pwa_chonburi_m3,outlier_hampel,47800.0
+1999-10-18,use_pwa_chonburi_m3,outlier_hampel,39400.0
+1999-10-20,use_pwa_chonburi_m3,outlier_hampel,181800.0
+1999-10-21,use_pwa_chonburi_m3,outlier_hampel,100900.0
+1999-10-29,use_pwa_chonburi_m3,outlier_hampel,118600.0
+2000-01-09,use_pwa_chonburi_m3,outlier_hampel,104300.0
+2000-01-10,use_pwa_chonburi_m3,outlier_hampel,106600.0
+2000-01-12,use_pwa_chonburi_m3,outlier_hampel,101400.0
+2000-01-21,use_pwa_chonburi_m3,outlier_hampel,126900.0
+2000-01-22,use_pwa_chonburi_m3,outlier_hampel,102600.0
+2000-01-31,use_pwa_chonburi_m3,outlier_hampel,100300.0
+2000-02-01,use_pwa_chonburi_m3,outlier_hampel,100000.0
+2000-02-07,use_pwa_chonburi_m3,outlier_hampel,16500.0
+2000-02-10,use_pwa_chonburi_m3,outlier_hampel,127200.0
+2000-02-18,use_pwa_chonburi_m3,outlier_hampel,128318.0
+2000-02-27,use_pwa_chonburi_m3,outlier_hampel,100018.0
+2000-02-28,use_pwa_chonburi_m3,outlier_hampel,98718.0
+2000-02-29,use_pwa_chonburi_m3,outlier_hampel,99718.0
+2000-03-01,use_pwa_chonburi_m3,outlier_hampel,100618.0
+2000-03-02,use_pwa_chonburi_m3,outlier_hampel,100618.0
+2000-03-06,use_pwa_chonburi_m3,outlier_hampel,95800.0
+2000-03-16,use_pwa_chonburi_m3,outlier_hampel,100718.0
+2000-03-17,use_pwa_chonburi_m3,outlier_hampel,153818.0
+2000-03-18,use_pwa_chonburi_m3,outlier_hampel,101118.0
+2000-03-19,use_pwa_chonburi_m3,outlier_hampel,100818.0
+2000-03-20,use_pwa_chonburi_m3,outlier_hampel,100718.0
+2000-03-30,use_pwa_chonburi_m3,outlier_hampel,129918.0
+2000-03-31,use_pwa_chonburi_m3,outlier_hampel,101118.0
+2000-05-09,use_pwa_chonburi_m3,outlier_hampel,100918.0
+2000-05-10,use_pwa_chonburi_m3,outlier_hampel,100818.0
+2000-06-09,use_pwa_chonburi_m3,outlier_hampel,133117.0
+2000-06-26,use_pwa_chonburi_m3,outlier_hampel,10418.0
+2000-07-07,use_pwa_chonburi_m3,outlier_hampel,139718.0
+2000-11-01,use_pwa_chonburi_m3,outlier_hampel,2222.0
+2001-10-04,use_pwa_chonburi_m3,outlier_hampel,23110.0
+2002-01-31,use_pwa_chonburi_m3,outlier_hampel,21470.0
+2002-02-01,use_pwa_chonburi_m3,outlier_hampel,98580.0
+2002-05-20,use_pwa_chonburi_m3,outlier_hampel,92370.0
+2002-07-31,use_pwa_chonburi_m3,outlier_hampel,85730.0
+2002-08-19,use_pwa_chonburi_m3,outlier_hampel,81410.0
+2002-12-04,use_pwa_chonburi_m3,outlier_hampel,18910.0
+2002-12-17,use_pwa_chonburi_m3,outlier_hampel,20720.0
+2003-09-12,use_pwa_chonburi_m3,outlier_hampel,35450.0
+2004-08-14,use_pwa_chonburi_m3,outlier_hampel,35720.0
+2004-08-21,use_pwa_chonburi_m3,outlier_hampel,35680.0
+2004-10-13,use_pwa_chonburi_m3,outlier_hampel,33360.0
+2004-11-01,use_pwa_chonburi_m3,outlier_hampel,6550.0
+2004-11-02,use_pwa_chonburi_m3,outlier_hampel,6700.0
+2005-01-11,use_pwa_chonburi_m3,outlier_hampel,24040.0
+2005-01-12,use_pwa_chonburi_m3,outlier_hampel,108430.0
+2005-02-07,use_pwa_chonburi_m3,outlier_hampel,5804.0
+2005-02-11,use_pwa_chonburi_m3,outlier_hampel,36250.0
+2005-02-13,use_pwa_chonburi_m3,outlier_hampel,35090.0
+2006-02-21,use_pwa_chonburi_m3,outlier_hampel,54800.0
+2007-03-30,use_pwa_chonburi_m3,outlier_hampel,97900.0
+2007-03-31,use_pwa_chonburi_m3,outlier_hampel,41900.0
+2007-10-10,use_pwa_chonburi_m3,outlier_hampel,46100.0
+2007-10-11,use_pwa_chonburi_m3,outlier_hampel,96700.0
+2007-12-06,use_pwa_chonburi_m3,outlier_hampel,27600.0
+2007-12-26,use_pwa_chonburi_m3,outlier_hampel,48800.0
+2008-01-07,use_pwa_chonburi_m3,outlier_hampel,36500.0
+2008-02-26,use_pwa_chonburi_m3,outlier_hampel,90000.0
+2009-07-20,use_pwa_chonburi_m3,outlier_hampel,51700.0
+2009-07-31,use_pwa_chonburi_m3,outlier_hampel,106700.0
+2009-08-01,use_pwa_chonburi_m3,outlier_hampel,50600.0
+2009-08-20,use_pwa_chonburi_m3,outlier_hampel,109700.0
+2009-08-21,use_pwa_chonburi_m3,outlier_hampel,45900.0
+2009-11-17,use_pwa_chonburi_m3,outlier_hampel,43500.0
+2009-11-20,use_pwa_chonburi_m3,outlier_hampel,52200.0
+2009-11-23,use_pwa_chonburi_m3,outlier_hampel,47600.0
+2009-11-25,use_pwa_chonburi_m3,outlier_hampel,53000.0
+2010-01-29,use_pwa_chonburi_m3,outlier_hampel,23700.0
+2010-01-30,use_pwa_chonburi_m3,outlier_hampel,125000.0
+2010-10-21,use_pwa_chonburi_m3,outlier_hampel,38800.0
+2010-12-15,use_pwa_chonburi_m3,outlier_hampel,6057.0
+2010-12-16,use_pwa_chonburi_m3,outlier_hampel,862.0
+2010-12-17,use_pwa_chonburi_m3,outlier_hampel,2338.0
+2012-02-11,use_pwa_chonburi_m3,outlier_hampel,87635.0
+2012-03-11,use_pwa_chonburi_m3,outlier_hampel,95100.0
+2012-05-18,use_pwa_chonburi_m3,outlier_hampel,24800.0
+2012-05-19,use_pwa_chonburi_m3,outlier_hampel,102200.0
+2012-05-23,use_pwa_chonburi_m3,outlier_hampel,28800.0
+2012-05-26,use_pwa_chonburi_m3,outlier_hampel,39100.0
+2012-06-19,use_pwa_chonburi_m3,outlier_hampel,23600.0
+2012-06-30,use_pwa_chonburi_m3,outlier_hampel,28400.0
+2012-07-01,use_pwa_chonburi_m3,outlier_hampel,102200.0
+2012-08-15,use_pwa_chonburi_m3,outlier_hampel,24700.0
+2012-08-16,use_pwa_chonburi_m3,outlier_hampel,24800.0
+2012-08-17,use_pwa_chonburi_m3,outlier_hampel,109800.0
+2012-09-04,use_pwa_chonburi_m3,outlier_hampel,125244.0
+2012-09-06,use_pwa_chonburi_m3,outlier_hampel,171623.0
+2012-09-29,use_pwa_chonburi_m3,outlier_hampel,69885.0
+2012-12-10,use_pwa_chonburi_m3,outlier_hampel,111944.0
+2013-01-07,use_pwa_chonburi_m3,outlier_hampel,11200.0
+2013-03-14,use_pwa_chonburi_m3,outlier_hampel,34475.0
+2013-03-15,use_pwa_chonburi_m3,outlier_hampel,112796.0
+2013-04-08,use_pwa_chonburi_m3,outlier_hampel,47945.0
+2013-08-13,use_pwa_chonburi_m3,outlier_hampel,54900.0
+2013-08-14,use_pwa_chonburi_m3,outlier_hampel,110117.0
+2014-01-13,use_pwa_chonburi_m3,outlier_hampel,84030.0
+2014-01-14,use_pwa_chonburi_m3,outlier_hampel,84830.0
+2014-01-19,use_pwa_chonburi_m3,outlier_hampel,52622.0
+2014-01-25,use_pwa_chonburi_m3,outlier_hampel,55830.0
+2014-03-22,use_pwa_chonburi_m3,outlier_hampel,11300.0
+2014-05-09,use_pwa_chonburi_m3,outlier_hampel,56227.0
+2014-05-10,use_pwa_chonburi_m3,outlier_hampel,53327.0
+2014-05-27,use_pwa_chonburi_m3,outlier_hampel,55227.0
+2014-05-28,use_pwa_chonburi_m3,outlier_hampel,118241.0
+2014-05-30,use_pwa_chonburi_m3,outlier_hampel,55427.0
+2014-05-31,use_pwa_chonburi_m3,outlier_hampel,55627.0
+2014-06-01,use_pwa_chonburi_m3,outlier_hampel,54827.0
+2014-06-13,use_pwa_chonburi_m3,outlier_hampel,57496.0
+2014-08-26,use_pwa_chonburi_m3,outlier_hampel,70501.0
+2014-12-14,use_pwa_chonburi_m3,outlier_hampel,53877.0
+2015-02-25,use_pwa_chonburi_m3,outlier_hampel,73391.0
+2015-04-03,use_pwa_chonburi_m3,outlier_hampel,60768.0
+2015-05-25,use_pwa_chonburi_m3,outlier_hampel,82611.0
+2015-07-25,use_pwa_chonburi_m3,outlier_hampel,70119.0
+2015-07-26,use_pwa_chonburi_m3,outlier_hampel,172050.0
+2015-08-14,use_pwa_chonburi_m3,outlier_hampel,14876.0
+2015-10-15,use_pwa_chonburi_m3,outlier_hampel,61918.0
+2015-10-16,use_pwa_chonburi_m3,outlier_hampel,61367.0
+2016-03-31,use_pwa_chonburi_m3,outlier_hampel,90332.0
+2016-06-14,use_pwa_chonburi_m3,outlier_hampel,62893.0
+2016-06-15,use_pwa_chonburi_m3,outlier_hampel,66321.0
+2017-07-25,use_pwa_chonburi_m3,outlier_hampel,114534.0
+2017-11-03,use_pwa_chonburi_m3,outlier_hampel,91108.0
+2017-11-04,use_pwa_chonburi_m3,outlier_hampel,141353.0
+2017-11-07,use_pwa_chonburi_m3,outlier_hampel,126104.0
+2017-11-09,use_pwa_chonburi_m3,outlier_hampel,149569.0
+2017-12-24,use_pwa_chonburi_m3,outlier_hampel,155645.0
+2017-12-25,use_pwa_chonburi_m3,outlier_hampel,307300.0
+2018-04-10,use_pwa_chonburi_m3,outlier_hampel,149994.0
+2018-04-13,use_pwa_chonburi_m3,outlier_hampel,301778.0
+2018-04-19,use_pwa_chonburi_m3,outlier_hampel,147057.0
+2018-07-11,use_pwa_chonburi_m3,outlier_hampel,162732.0
+2019-04-09,use_pwa_chonburi_m3,outlier_hampel,192088.0
+2019-07-20,use_pwa_chonburi_m3,outlier_hampel,66257.0
+2019-07-21,use_pwa_chonburi_m3,outlier_hampel,104169.0
+2019-07-25,use_pwa_chonburi_m3,outlier_hampel,91460.0
+2019-07-26,use_pwa_chonburi_m3,outlier_hampel,212226.0
+2019-08-06,use_pwa_chonburi_m3,outlier_hampel,65750.0
+2019-08-10,use_pwa_chonburi_m3,outlier_hampel,210481.0
+2020-01-01,use_pwa_chonburi_m3,outlier_hampel,111965.0
+2020-04-22,use_pwa_chonburi_m3,outlier_hampel,122481.0
+2021-07-29,use_pwa_chonburi_m3,outlier_hampel,93266.0
+2021-08-27,use_pwa_chonburi_m3,outlier_hampel,102139.0
+2021-11-11,use_pwa_chonburi_m3,outlier_hampel,93089.0
+2002-09-23,use_thai_oil_m3,spike,30345.0
+2004-03-15,use_thai_oil_m3,spike,43232.0
+2010-05-06,use_thai_oil_m3,spike,54456.0
+2015-08-20,use_thai_oil_m3,spike,105589.0
+2011-01-12,use_egat_bangpakong_m3,spike,34432.0
+2011-01-13,use_egat_bangpakong_m3,spike,33844.0
+2011-01-14,use_egat_bangpakong_m3,spike,32613.0
+2011-01-15,use_egat_bangpakong_m3,spike,36353.0
+2011-01-16,use_egat_bangpakong_m3,spike,32919.0
+2011-01-17,use_egat_bangpakong_m3,spike,34068.0
+2011-01-18,use_egat_bangpakong_m3,spike,34071.0
+2012-05-10,use_egat_bangpakong_m3,spike,49520.0
+2014-02-28,use_egat_bangpakong_m3,spike,41784.0
+2014-11-24,use_egat_bangpakong_m3,spike,52408.0
