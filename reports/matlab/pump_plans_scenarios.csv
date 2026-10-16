@@ -1,0 +1,3 @@
+scenario,key,demand_m3_day,valid_combinations,combinations,max_tm_pond_pumps,max_pumping_npl2_npl3_tm,tank1,tank1_net_flow_m3_day,tank2,tank2_net_flow_m3_day
+Model demand,model_demand,688403,105,343,2,6 + 6 + 2,NPL2_HT,7110.21826171875,NPL3_HT,-18590.96875
+Without placeholder nodes 71 and 678,no_placeholders,488403,105,343,2,6 + 6 + 2,NPL2_HT,48487.54296875,NPL3_HT,111496.3359375

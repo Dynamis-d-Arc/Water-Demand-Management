@@ -1,0 +1,121 @@
+scenario,schedule,hour,npl2_pumps,npl3_pumps,tm_pond_pumps,tariff_thb_per_kwh
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",0,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",1,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",2,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",3,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",4,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",5,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",6,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",7,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",8,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",9,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",10,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",11,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",12,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",13,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",14,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",15,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",16,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",17,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",18,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",19,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",20,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",21,6,6,2,4.1839
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",22,6,6,2,2.6037
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",23,6,6,2,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",0,5,3,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",1,6,4,0,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",2,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",3,5,5,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",4,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",5,5,3,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",6,5,3,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",7,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",8,5,4,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",9,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",10,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",11,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",12,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",13,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",14,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",15,6,3,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",16,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",17,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",18,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",19,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",20,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",21,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",22,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",23,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",0,3,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",1,5,3,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",2,5,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",3,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",4,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",5,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",6,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",7,6,3,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",8,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",9,4,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",10,4,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",11,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",12,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",13,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",14,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",15,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",16,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",17,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",18,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",19,4,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",20,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",21,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan A lowest cost",22,6,5,2,2.6037
+Without placeholder nodes 71 and 678,"Plan A lowest cost",23,6,5,2,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",0,4,2,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",1,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",2,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",3,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",4,3,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",5,6,5,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",6,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",7,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",8,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",9,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",10,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",11,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",12,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",13,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",14,6,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",15,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",16,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",17,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",18,4,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",19,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",20,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",21,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan C balanced",22,6,6,1,2.6037
+Without placeholder nodes 71 and 678,"Plan C balanced",23,6,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",0,5,4,1,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",1,5,3,2,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",2,6,4,0,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",3,5,4,2,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",4,5,3,1,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",5,5,5,1,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",6,6,3,1,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",7,4,4,2,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",8,5,4,2,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",9,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",10,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",11,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",12,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",13,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",14,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",15,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",16,6,5,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",17,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",18,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",19,5,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",20,6,4,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",21,5,3,1,4.1839
+Without placeholder nodes 71 and 678,"Plan B lower risk",22,6,5,1,2.6037
+Without placeholder nodes 71 and 678,"Plan B lower risk",23,6,4,1,2.6037

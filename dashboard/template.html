@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bang Phra &amp; Rayong Supply POC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: an operations briefing. Masthead and three key messages first, a strip of six
+   headline numbers, then evidence sections on a 12-column grid that stacks on phones. */
+:root {
+  --page: #f2f5f6;
+  --surface: #fbfcfc;
+  --surface-2: #e9eef0;
+  --ink: #0e1d26;
+  --ink-2: #46555e;
+  --muted: #74828a;
+  --grid: #e1e7ea;
+  --axis: #bfc9ce;
+  --border: rgba(14, 29, 38, 0.11);
+  --accent: #1c5cab;
+  --accent-ink: #ffffff;
+  --s1: #2a78d6;
+  --s2: #eb6834;
+  --s3: #1baf7a;
+  --band: rgba(42, 120, 214, 0.16);
+  --track: #cde2fb;
+  --peak: rgba(14, 29, 38, 0.05);
+  --good: #0ca30c;
+  --warning: #fab219;
+  --critical: #d03b3b;
+  --good-ink: #0b6b13;
+  --warning-ink: #85570a;
+  --critical-ink: #b02d2d;
+  --good-bg: rgba(12, 163, 12, 0.10);
+  --warning-bg: rgba(250, 178, 25, 0.18);
+  --critical-bg: rgba(208, 59, 59, 0.10);
+  --neutral-bg: rgba(14, 29, 38, 0.06);
+  --shadow: 0 1px 2px rgba(14, 29, 38, 0.06), 0 6px 20px rgba(14, 29, 38, 0.06);
+  --sans: "IBM Plex Sans Thai", "IBM Plex Sans", "Segoe UI", "Leelawadee UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0a1115; --surface: #131c21; --surface-2: #1b262c; --ink: #eef3f5; --ink-2: #b3c0c6;
+    --muted: #84929a; --grid: #223039; --axis: #36464f; --border: rgba(255, 255, 255, 0.10);
+    --accent: #6da7ec; --accent-ink: #0a1115; --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --band: rgba(57, 135, 229, 0.25); --track: #184f95; --peak: rgba(255, 255, 255, 0.05);
+    --good-ink: #46c94a; --warning-ink: #fbbf3c; --critical-ink: #f07a7a;
+    --good-bg: rgba(12, 163, 12, 0.16); --warning-bg: rgba(250, 178, 25, 0.16);
+    --critical-bg: rgba(208, 59, 59, 0.20); --neutral-bg: rgba(255, 255, 255, 0.07);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0a1115; --surface: #131c21; --surface-2: #1b262c; --ink: #eef3f5; --ink-2: #b3c0c6;
+  --muted: #84929a; --grid: #223039; --axis: #36464f; --border: rgba(255, 255, 255, 0.10);
+  --accent: #6da7ec; --accent-ink: #0a1115; --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+  --band: rgba(57, 135, 229, 0.25); --track: #184f95; --peak: rgba(255, 255, 255, 0.05);
+  --good-ink: #46c94a; --warning-ink: #fbbf3c; --critical-ink: #f07a7a;
+  --good-bg: rgba(12, 163, 12, 0.16); --warning-bg: rgba(250, 178, 25, 0.16);
+  --critical-bg: rgba(208, 59, 59, 0.20); --neutral-bg: rgba(255, 255, 255, 0.07);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--sans); font-size: 15px;
+  line-height: 1.55; }
+.wrap { max-width: 1240px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); padding-block: 28px 72px;
+  display: grid; gap: 44px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mono { font-family: var(--mono); }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Masthead */
+.mast { display: grid; gap: 14px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+.mast-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mast h1 { font-size: clamp(30px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -0.015em; }
+.dek { font-size: 17px; color: var(--ink-2); max-width: 64ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+.meta b { color: var(--ink-2); font-weight: 500; }
+.theme-btn { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 5px 12px;
+  font-family: var(--mono); font-size: 12px; color: var(--ink-2); cursor: pointer; }
+.theme-btn:hover { background: var(--surface-2); }
+
+/* Status chips: color plus icon plus label, never color alone */
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 8px; border-radius: 999px;
+  font-size: 12.5px; font-weight: 500; line-height: 1.3; white-space: nowrap; }
+.chip svg { width: 14px; height: 14px; flex: none; }
+.chip.good { background: var(--good-bg); color: var(--good-ink); }
+.chip.warning { background: var(--warning-bg); color: var(--warning-ink); }
+.chip.critical { background: var(--critical-bg); color: var(--critical-ink); }
+.chip.neutral { background: var(--neutral-bg); color: var(--ink-2); }
+
+/* Key messages */
+.verdicts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.verdict { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  display: grid; gap: 10px; align-content: start; box-shadow: var(--shadow); }
+.verdict h3 { font-size: 18px; line-height: 1.3; }
+.verdict p { color: var(--ink-2); font-size: 14.5px; }
+.verdict .area { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.verdict-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* KPI strip */
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.kpi { background: var(--surface); padding: 18px 20px 20px; display: grid; gap: 6px; align-content: start; }
+.kpi-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.kpi-label { font-size: 13.5px; color: var(--ink-2); font-weight: 500; }
+.kpi-value { font-size: 32px; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+.kpi-value small { font-size: 15px; font-weight: 500; color: var(--ink-2); margin-left: 4px; letter-spacing: 0; }
+.kpi-sub { font-size: 13.5px; color: var(--ink-2); }
+.kpi-src { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.spark { display: block; width: 100%; max-width: 220px; height: 34px; margin-top: 2px; }
+
+/* Sections */
+section { display: grid; gap: 18px; }
+.sec-head { display: grid; gap: 6px; max-width: 78ch; }
+.sec-head h2 { font-size: clamp(22px, 2.6vw, 27px); letter-spacing: -0.01em; }
+.sec-head p { color: var(--ink-2); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.span-12 { grid-column: span 12; } .span-8 { grid-column: span 8; } .span-7 { grid-column: span 7; }
+.span-6 { grid-column: span 6; } .span-5 { grid-column: span 5; } .span-4 { grid-column: span 4; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px 16px;
+  display: grid; gap: 12px; align-content: start; min-width: 0; }
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.card-title { display: grid; gap: 3px; min-width: 0; }
+.card h3 { font-size: 16px; }
+.card .sub { font-size: 13.5px; color: var(--ink-2); }
+.note { font-size: 13px; color: var(--muted); }
+.callout { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--ink-2); font-size: 14px; }
+
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 9px; padding: 2px; background: var(--surface-2); }
+.seg button { border: 0; background: transparent; padding: 6px 12px; border-radius: 7px; cursor: pointer; font-size: 13.5px;
+  color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: var(--shadow); }
+.ctl-label { font-size: 12.5px; color: var(--muted); font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.06em; }
+.tbl-btn { border: 1px solid var(--border); background: transparent; border-radius: 7px; padding: 4px 10px; font-size: 12.5px;
+  color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+.tbl-btn:hover { background: var(--surface-2); }
+
+/* Legends */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.key-line { width: 18px; height: 0; border-top: 2px solid currentColor; display: inline-block; }
+.key-box { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.c-ink { color: var(--ink); } .c-s1 { color: var(--s1); } .c-s2 { color: var(--s2); } .c-s3 { color: var(--s3); }
+.c-crit { color: var(--critical); }
+.bg-band { background: var(--band); } .bg-s1 { background: var(--s1); } .bg-s2 { background: var(--s2); }
+.bg-s3 { background: var(--s3); } .bg-warn { background: var(--warning); } .bg-peak { background: var(--peak); border: 1px solid var(--border); }
+
+/* Charts */
+.chart { width: 100%; min-width: 0; position: relative; }
+.chart svg { display: block; overflow: visible; }
+.chart text { font-family: var(--mono); font-size: 11.5px; fill: var(--muted); }
+.gl { stroke: var(--grid); stroke-width: 1; shape-rendering: crispEdges; }
+.base { stroke: var(--axis); stroke-width: 1; shape-rendering: crispEdges; }
+.ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.ln-ink { stroke: var(--ink); } .ln-s1 { stroke: var(--s1); } .ln-s2 { stroke: var(--s2); } .ln-s3 { stroke: var(--s3); }
+.f-s1 { fill: var(--s1); } .f-s2 { fill: var(--s2); } .f-s3 { fill: var(--s3); } .f-ink { fill: var(--ink); }
+.f-warn { fill: var(--warning); } .f-track { fill: var(--track); }
+.band { fill: var(--band); }
+.area-s1 { fill: var(--s1); fill-opacity: 0.10; }
+.crit { stroke: var(--critical); stroke-width: 1.5; }
+.chart .crit-lbl { fill: var(--critical-ink); font-family: var(--sans); font-size: 12px; font-weight: 500; }
+.chart .lbl { fill: var(--ink-2); font-family: var(--sans); font-size: 12px; }
+.chart .lbl-strong { fill: var(--ink); font-family: var(--sans); font-size: 12.5px; font-weight: 600; }
+.chart .node-lbl { fill: var(--ink-2); font-size: 11.5px; }
+.today { stroke: var(--ink-2); stroke-width: 1; }
+.xhair { stroke: var(--ink-2); stroke-width: 1; pointer-events: none; }
+.dot { stroke: var(--surface); stroke-width: 2; }
+.peak { fill: var(--peak); }
+.hit { fill: transparent; cursor: crosshair; }
+.hit:focus { outline: none; }
+.hit:focus-visible { stroke: var(--accent); stroke-width: 2; }
+.mark { cursor: default; }
+.mark:hover, .mark.on { filter: brightness(1.12); }
+
+/* Tooltip */
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: 9px; padding: 9px 11px; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+  font-size: 13px; min-width: 160px; max-width: 280px; display: grid; gap: 4px; }
+.tip .t-head { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.tip .t-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+.tip .t-key { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.tip .t-val { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* Meters (plan vs actual) */
+.meters { display: grid; gap: 10px; }
+.meter-row { display: grid; grid-template-columns: minmax(96px, 150px) minmax(0, 1fr) 118px; gap: 12px; align-items: center; }
+.meter-row.total { border-top: 1px solid var(--border); padding-top: 10px; font-weight: 600; }
+.meter-name { font-size: 14px; }
+.meter { height: 12px; background: var(--track); border-radius: 4px; position: relative; overflow: hidden; }
+.meter i { position: absolute; inset: 0 auto 0 0; background: var(--s1); border-radius: 0 4px 4px 0; }
+.meter-val { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
+.meter-val span { display: block; font-size: 12px; color: var(--muted); font-weight: 400; }
+
+/* Tables */
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { font-weight: 500; color: var(--muted); font-size: 12px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.04em; }
+td.num, th.num { text-align: right; }
+tr.dim td { color: var(--muted); }
+
+/* Big figures inside cards */
+.figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+.fig { display: grid; gap: 2px; }
+.fig .v { font-size: 24px; font-weight: 600; line-height: 1.15; }
+.fig .v small { font-size: 13px; color: var(--ink-2); font-weight: 500; margin-left: 3px; }
+.fig .k { font-size: 13px; color: var(--ink-2); }
+
+/* Roadmap */
+.road { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+.step .code { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.step h3 { font-size: 15px; }
+.step p { font-size: 13.5px; color: var(--ink-2); }
+.lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.lists ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--ink-2); }
+.lists li b { color: var(--ink); font-weight: 600; }
+
+footer { border-top: 1px solid var(--border); padding-top: 22px; display: grid; gap: 10px; color: var(--muted); font-size: 13px; }
+footer ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+footer code { font-family: var(--mono); font-size: 12px; }
+
+@media (max-width: 960px) {
+  .verdicts { grid-template-columns: minmax(0, 1fr); }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .span-8, .span-7, .span-6, .span-5, .span-4 { grid-column: span 12; }
+  .road { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .kpis { grid-template-columns: minmax(0, 1fr); }
+  .road, .lists { grid-template-columns: minmax(0, 1fr); }
+  .meter-row { grid-template-columns: minmax(0, 1fr) 104px; }
+  .meter-row .meter { grid-column: 1 / -1; grid-row: 2; }
+  .figs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .seg button, .tbl-btn, .theme-btn { transition: background-color 120ms ease; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mast-top">
+      <p class="eyebrow">Proof of concept · AI for demand &amp; supply optimization</p>
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="Change colour theme">Theme: auto</button>
+    </div>
+    <h1>Bang Phra &amp; Rayong supply POC</h1>
+    <p class="dek">What 35 years of Bang Phra reservoir records and the 2023 Rayong network model say about demand, the risk of running short, and the cost of pumping.</p>
+    <div class="meta">
+      <span>Reservoir data to <b id="m-asof"></b></span>
+      <span>Network model <b>Demand-2023</b></span>
+      <span>Built <b id="m-built"></b></span>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key" class="eyebrow">Three things to know</h2>
+    <div class="verdicts" id="verdicts"></div>
+  </section>
+
+  <section aria-label="Headline numbers">
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section id="supply" aria-labelledby="h-supply">
+    <div class="sec-head">
+      <p class="eyebrow">Supply · Bang Phra reservoir</p>
+      <h2 id="h-supply">Will Bang Phra stay above the critical level?</h2>
+      <p>The outlook replays the inflows of every year since 1990 from today's storage, under the use and diversion assumptions you choose. The band is the range across those years.</p>
+    </div>
+    <div class="controls" role="group" aria-label="Outlook assumptions">
+      <span class="ctl-label" id="l-dem">Use</span>
+      <div class="seg" id="seg-demand" role="group" aria-labelledby="l-dem">
+        <button type="button" data-v="recent" aria-pressed="true">Recent use</button>
+        <button type="button" data-v="plan" aria-pressed="false">Allocation plan</button>
+      </div>
+      <span class="ctl-label" id="l-div">Diversions</span>
+      <div class="seg" id="seg-div" role="group" aria-labelledby="l-div">
+        <button type="button" data-v="typical" aria-pressed="true">Usual</button>
+        <button type="button" data-v="none" aria-pressed="false">None</button>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="card span-8" style="margin:0">
+        <div class="card-head">
+          <div class="card-title">
+            <h3>Storage outlook, million m³</h3>
+            <p class="sub" id="fan-sub"></p>
+          </div>
+          <button class="tbl-btn" type="button" data-table="fan">Show data</button>
+        </div>
+        <div class="legend">
+          <span><i class="key-line c-ink"></i>Recorded storage</span>
+          <span><i class="key-line c-s1"></i>Median outlook</span>
+          <span><i class="key-box bg-band"></i>Range across inflow years (10–90%)</span>
+          <span><i class="key-line c-crit"></i>Critical level, 30% of capacity</span>
+        </div>
+        <div class="chart" id="fan" role="img" aria-label="Storage outlook chart"></div>
+        <div class="tbl" id="tbl-fan" hidden></div>
+      </figure>
+      <div class="card span-4">
+        <div class="card-title"><h3>Under these assumptions</h3><p class="sub" id="scen-desc"></p></div>
+        <div class="figs" id="scen-figs"></div>
+        <p class="callout" id="scen-callout"></p>
+      </div>
+      <figure class="card span-12" style="margin:0">
+        <div class="card-head">
+          <div class="card-title">
+            <h3>Storage since 1990, monthly average, million m³</h3>
+            <p class="sub" id="hist-sub"></p>
+          </div>
+          <button class="tbl-btn" type="button" data-table="hist">Show data</button>
+        </div>
+        <div class="chart" id="hist" role="img" aria-label="Monthly storage since 1990"></div>
+        <div class="tbl" id="tbl-hist" hidden></div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="demand" aria-labelledby="h-demand">
+    <div class="sec-head">
+      <p class="eyebrow">Demand · Bang Phra users</p>
+      <h2 id="h-demand">How much water do users take, and how fast is it growing?</h2>
+      <p id="demand-intro"></p>
+    </div>
+    <div class="grid">
+      <figure class="card span-7" style="margin:0">
+        <div class="card-head">
+          <div class="card-title"><h3>Average daily use by year, thousand m³ per day</h3><p class="sub">Full years 1990–2024</p></div>
+          <button class="tbl-btn" type="button" data-table="demand">Show data</button>
+        </div>
+        <div class="legend">
+          <span><i class="key-line c-s1"></i>All users</span>
+          <span><i class="key-line c-s2"></i>PWA Chonburi (waterworks)</span>
+        </div>
+        <div class="chart" id="demand-chart" role="img" aria-label="Average daily use by year"></div>
+        <div class="tbl" id="tbl-demand" hidden></div>
+      </figure>
+      <div class="card span-5">
+        <div class="card-title"><h3>Use against the allocation plan</h3><p class="sub" id="pva-sub"></p></div>
+        <div class="meters" id="meters"></div>
+        <p class="note">Bar = share of each user's planned daily volume actually drawn.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="accuracy" aria-labelledby="h-acc">
+    <div class="sec-head">
+      <p class="eyebrow">Forecasting · tested on data the models never saw</p>
+      <h2 id="h-acc">How accurate are the forecasts?</h2>
+      <p>Each forecast was made using only the data available on its date, then compared with what actually happened.</p>
+    </div>
+    <div class="grid">
+      <figure class="card span-6" style="margin:0">
+        <div class="card-head">
+          <div class="card-title"><h3>Daily demand error, PWA Chonburi, % of actual use</h3><p class="sub" id="acc-d-sub"></p></div>
+          <button class="tbl-btn" type="button" data-table="accd">Show data</button>
+        </div>
+        <div class="legend">
+          <span><i class="key-line c-s3"></i>Best simple method</span>
+          <span><i class="key-line c-s2"></i>Machine learning</span>
+        </div>
+        <div class="chart" id="acc-d" role="img" aria-label="Daily demand forecast error by days ahead"></div>
+        <div class="tbl" id="tbl-accd" hidden></div>
+        <p class="callout" id="acc-d-msg"></p>
+      </figure>
+      <figure class="card span-6" style="margin:0">
+        <div class="card-head">
+          <div class="card-title"><h3>Storage forecast error, million m³</h3><p class="sub" id="acc-s-sub"></p></div>
+          <button class="tbl-btn" type="button" data-table="accs">Show data</button>
+        </div>
+        <div class="legend">
+          <span><i class="key-box bg-s3"></i>Seasonal average</span>
+          <span><i class="key-box bg-s2"></i>Machine learning</span>
+          <span><i class="key-box bg-s1"></i>Inflow simulation (used in the outlook)</span>
+        </div>
+        <div class="chart" id="acc-s" role="img" aria-label="Storage forecast error by horizon"></div>
+        <div class="tbl" id="tbl-accs" hidden></div>
+        <p class="callout" id="acc-s-msg"></p>
+      </figure>
+    </div>
+  </section>
+
+  <section id="network" aria-labelledby="h-net">
+    <div class="sec-head">
+      <p class="eyebrow">Network · Rayong EPANET model</p>
+      <h2 id="h-net">Can the network meet demand, and what does pumping cost?</h2>
+      <p>Every pump plan is run through the EPANET hydraulic model before it is shown. A plan that leaves a customer without pressure, empties a tank or cannot repeat the next day is rejected.</p>
+    </div>
+    <div class="grid">
+      <div class="card span-12" id="capacity-card"></div>
+      <figure class="card span-5" style="margin:0">
+        <div class="card-head">
+          <div class="card-title"><h3>Lowest pressure at each customer, metres</h3><p class="sub" id="pr-sub"></p></div>
+          <button class="tbl-btn" type="button" data-table="pr">Show data</button>
+        </div>
+        <div class="legend">
+          <span><i class="key-box bg-s1"></i>Meets the 10 m target</span>
+          <span><i class="key-box bg-warn"></i>Below target</span>
+        </div>
+        <div class="chart" id="pressure" role="img" aria-label="Lowest pressure at each customer node"></div>
+        <div class="tbl" id="tbl-pr" hidden></div>
+      </figure>
+      <div class="span-7" style="display:grid;gap:16px;align-content:start;min-width:0">
+        <div class="card">
+          <div class="card-title"><h3>Pump plans for one day</h3><p class="sub" id="plans-sub"></p></div>
+          <div class="tbl" id="plans-table"></div>
+          <p class="callout" id="plans-msg"></p>
+        </div>
+        <figure class="card" style="margin:0">
+          <div class="card-head">
+            <div class="card-title"><h3>Pumps running by hour</h3><p class="sub" id="sched-sub"></p></div>
+            <button class="tbl-btn" type="button" data-table="sched">Show data</button>
+          </div>
+          <div class="controls">
+            <div class="seg" id="seg-sched" role="group" aria-label="Pump plan"></div>
+          </div>
+          <div class="legend">
+            <span><i class="key-box bg-s1"></i>NPL2</span>
+            <span><i class="key-box bg-s2"></i>NPL3</span>
+            <span><i class="key-box bg-s3"></i>TM Pond</span>
+            <span><i class="key-box bg-peak"></i>Peak tariff hours</span>
+          </div>
+          <div class="chart" id="sched" role="img" aria-label="Pumps running by hour"></div>
+          <div class="tbl" id="tbl-sched" hidden></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="next" aria-labelledby="h-next">
+    <div class="sec-head">
+      <p class="eyebrow">Roadmap</p>
+      <h2 id="h-next">Where the POC stands, and what we need from you</h2>
+    </div>
+    <div class="road" id="road"></div>
+    <div class="lists">
+      <div class="card">
+        <h3>Decisions</h3>
+        <ul>
+          <li><b>Choose one pilot area.</b> The reservoir data covers Chonburi; the network model covers Rayong. One area needs both.</li>
+          <li><b>Confirm nodes 71 and 678.</b> They carry 100,000 m³/day each and decide whether the NPL3 zone is short of capacity.</li>
+          <li><b>Confirm the TM Pond pumps.</b> Pumps 3 to 6 cannot run in the model. Are they standby or out of service?</li>
+          <li><b>Agree the KPIs.</b> Cost per m³, forecast error and planning time, measured before and after.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Data</h3>
+        <ul>
+          <li><b>Customer meter readings</b> for the 28 network customers: daily for 3 years and hourly for 3 months.</li>
+          <li><b>SCADA records:</b> pump status, flow and power, tank levels and key pressures.</li>
+          <li><b>Electricity tariff and pump power data</b> to replace the assumed time-of-use prices.</li>
+          <li><b>Allocation and contract changes</b> ahead of time; they drive demand more than weather does.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>How these numbers were produced.</b> Reservoir figures come from the Chonburi irrigation daily water report (sheet WB บางพระ, 1990 to <span id="f-asof"></span>), cleaned with every change logged. Network figures come from EPANET runs of <code>Demand-2023 v20RY to MTP new TM2P.inp</code>. Forecasts and pump plans were built in MATLAB R2026b.</p>
+    <ul>
+      <li>Electricity cost uses an assumed weekday time-of-use tariff (<span id="f-tariff"></span>); replace it with the actual tariff before quoting costs.</li>
+      <li>The network model has no daily demand pattern, so every hour carries the same demand.</li>
+      <li>The outlook treats each past year's inflow as equally likely and assumes diversions follow the last three years' pattern.</li>
+      <li>Source files: <code>reports/matlab/supply_outlook.md</code>, <code>backtest_comparison.md</code>, <code>pump_plans.md</code>, <code>reports/epanet_check.md</code>, <code>reports/data_quality_bangphra.md</code>.</li>
+    </ul>
+  </footer>
+</div>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<noscript><p style="padding:16px">The charts need JavaScript. The same numbers are in the reports folder.</p></noscript>
+
+<script type="application/json" id="data">/*__DATA__*/{}</script>
+<script>
+(() => {
+  'use strict';
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const root = document.documentElement;
+  const NS = 'http://www.w3.org/2000/svg';
+  const DAY = 86400000;
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // ---------------------------------------------------------------- helpers
+  const fmt = (v, nd = 0) => v == null || !isFinite(v) ? '–' :
+    Number(v).toLocaleString('en-US', { minimumFractionDigits: nd, maximumFractionDigits: nd });
+  const kfmt = v => fmt(v / 1000, 0) + 'k';
+  const r100 = v => Math.round(v / 100) * 100;
+  const parseD = s => { const p = s.split('-').map(Number); return Date.UTC(p[0], p[1] - 1, p[2] || 1); };
+  const fmtDate = t => { const x = new Date(t); return `${x.getUTCDate()} ${MONTHS[x.getUTCMonth()]} ${x.getUTCFullYear()}`; };
+  const fmtMonth = t => { const x = new Date(t); return `${MONTHS[x.getUTCMonth()]} ${x.getUTCFullYear()}`; };
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  function h(tag, attrs, ...kids) {
+    const e = document.createElement(tag);
+    for (const k in attrs || {}) {
+      if (k === 'class') e.className = attrs[k]; else if (k === 'text') e.textContent = attrs[k]; else e.setAttribute(k, attrs[k]);
+    }
+    for (const c of kids) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c)));
+    return e;
+  }
+  function s(tag, attrs, parent) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function stext(parent, x, y, str, attrs) { const t = s('text', Object.assign({ x, y }, attrs || {}), parent); t.textContent = str; return t; }
+  function scale(d0, d1, r0, r1) {
+    const f = v => r0 + (v - d0) * (r1 - r0) / (d1 - d0);
+    f.inv = p => d0 + (p - r0) * (d1 - d0) / (r1 - r0);
+    return f;
+  }
+  function niceMax(v, steps) {
+    const raw = v / steps, mag = 10 ** Math.floor(Math.log10(raw)), err = raw / mag;
+    const step = (err > 5 ? 10 : err > 2 ? 5 : err > 1 ? 2 : 1) * mag;
+    return { max: step * Math.ceil(v / step), step };
+  }
+  const pathOf = pts => pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join('');
+  function colPath(x, y, w, hgt, r) { // vertical bar, rounded data end (top), square baseline
+    r = Math.min(r, w / 2, hgt);
+    return `M${x},${y + hgt}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + hgt}Z`;
+  }
+  function barPath(x, y, w, hgt, r) { // horizontal bar, rounded data end (right), square baseline
+    r = Math.min(r, hgt / 2, w);
+    return `M${x},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + hgt - r}Q${x + w},${y + hgt} ${x + w - r},${y + hgt}H${x}Z`;
+  }
+  const ICONS = {
+    good: 'M3.5 8.5l3 3 6-7',
+    warning: 'M8 2.5l6 11H2z M8 6.5v3.5 M8 11.8v.4',
+    critical: 'M5 2.5h6l3.5 3.5v5L11 14.5H5L1.5 11V6z M6 6l4 4 M10 6l-4 4',
+    neutral: 'M8 1.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 1 0 8 1.8z M8 7.2v4 M8 4.8v.4'
+  };
+  function chip(kind, label) {
+    const c = h('span', { class: 'chip ' + kind });
+    const svg = s('svg', { viewBox: '0 0 16 16', 'aria-hidden': 'true' });
+    s('path', { d: ICONS[kind], fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg);
+    c.append(svg, document.createTextNode(label));
+    return c;
+  }
+
+  // ---------------------------------------------------------------- tooltip
+  const tip = document.getElementById('tip');
+  function showTip(head, rows, cx, cy) {
+    tip.textContent = '';
+    tip.append(h('div', { class: 't-head', text: head }));
+    for (const r of rows) {
+      const key = h('span', { class: 't-key' });
+      if (r.cls) key.append(h('i', { class: r.box ? 'key-box ' + r.cls : 'key-line ' + r.cls }));
+      key.append(document.createTextNode(r.label));
+      tip.append(h('div', { class: 't-row' }, key, h('span', { class: 't-val', text: r.value })));
+    }
+    tip.hidden = false;
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = cx + 14, y = cy - th - 12;
+    if (x + tw > window.innerWidth - 8) x = cx - tw - 14;
+    if (y < 8) y = cy + 16;
+    tip.style.left = clamp(x, 8, window.innerWidth - tw - 8) + 'px';
+    tip.style.top = clamp(y, 8, window.innerHeight - th - 8) + 'px';
+  }
+  const hideTip = () => { tip.hidden = true; };
+  window.addEventListener('scroll', hideTip, { passive: true });
+
+  // ---------------------------------------------------------------- chart frame
+  function frame(host, o) {
+    host.textContent = '';
+    const W = Math.max(260, Math.floor(host.clientWidth));
+    const H = o.height;
+    const m = Object.assign({ t: 14, r: 16, b: 30, l: 44 }, o.margin || {});
+    const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, 'aria-hidden': 'true' }, host);
+    const x = scale(o.x[0], o.x[1], m.l, W - m.r);
+    const y = scale(o.y[0], o.y[1], H - m.b, m.t);
+    const g = s('g', {}, svg);
+    for (const v of o.yTicks || []) {
+      s('line', { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), class: v === o.y[0] ? 'base' : 'gl' }, g);
+      stext(g, m.l - 8, y(v) + 4, o.yFmt ? o.yFmt(v) : v, { 'text-anchor': 'end' });
+    }
+    for (const t of o.xTicks || []) stext(g, x(t.x), H - m.b + 19, t.label, { 'text-anchor': t.anchor || 'middle' });
+    return { svg, g, x, y, W, H, m };
+  }
+  function hitLayer(f, onMove, onKey) {
+    const r = s('rect', { x: f.m.l, y: f.m.t, width: f.W - f.m.l - f.m.r, height: f.H - f.m.t - f.m.b, class: 'hit', tabindex: 0 }, f.svg);
+    r.addEventListener('pointermove', e => { const b = f.svg.getBoundingClientRect(); onMove(e.clientX - b.left, e.clientX, e.clientY); });
+    r.addEventListener('pointerleave', () => { hideTip(); onMove(null); });
+    r.addEventListener('blur', () => { hideTip(); onMove(null); });
+    r.addEventListener('focus', () => onKey(0));
+    r.addEventListener('keydown', e => {
+      const step = e.shiftKey ? 7 : 1;
+      if (e.key === 'ArrowRight') { onKey(step); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { onKey(-step); e.preventDefault(); }
+      else if (e.key === 'Escape') { hideTip(); onMove(null); }
+    });
+    return r;
+  }
+  function anchorOf(f, px, py) { const b = f.svg.getBoundingClientRect(); return [b.left + px, b.top + py]; }
+
+  // ---------------------------------------------------------------- tables
+  function table(id, head, rows, numCols) {
+    const box = document.getElementById('tbl-' + id);
+    box.textContent = '';
+    const t = h('table');
+    const tr = h('tr');
+    head.forEach((c, i) => tr.append(h('th', { class: numCols.includes(i) ? 'num' : '', text: c, scope: 'col' })));
+    t.append(h('thead', {}, tr));
+    const tb = h('tbody');
+    for (const r of rows) {
+      const row = h('tr');
+      r.forEach((c, i) => row.append(h('td', { class: numCols.includes(i) ? 'num' : '', text: c })));
+      tb.append(row);
+    }
+    t.append(tb);
+    box.append(t);
+  }
+  document.querySelectorAll('.tbl-btn').forEach(b => {
+    b.setAttribute('aria-expanded', 'false');
+    b.setAttribute('aria-controls', 'tbl-' + b.dataset.table);
+    b.addEventListener('click', () => {
+      const box = document.getElementById('tbl-' + b.dataset.table);
+      box.hidden = !box.hidden;
+      b.setAttribute('aria-expanded', String(!box.hidden));
+      b.textContent = box.hidden ? 'Show data' : 'Hide data';
+    });
+  });
+
+  // ---------------------------------------------------------------- data shortcuts
+  const ST = D.storage, OUT = D.outlook, NET = D.network, ACC = D.accuracy;
+  const t0 = parseD(ST.asOf);
+  const scenByKey = (dem, div) => OUT.scenarios.find(x => x.demand === dem && x.diversions === div);
+  const base = scenByKey('recent', 'typical'), noDiv = scenByKey('recent', 'none');
+  const netAlt = NET.scenarios.find(x => x.key === 'no_placeholders');
+  const netModel = NET.scenarios.find(x => x.key === 'model_demand');
+  const short = netModel.tankFlows.filter(f => f[1] < 0);
+  const shortName = short.length ? short[0][0] : '';
+  const shortM3 = short.length ? -short[0][1] : 0;
+  const pva = D.demand.planVsActual;
+  const pvaOf = u => pva.find(x => x.user === u);
+  const ref = netAlt.plans.find(p => p.schedule.startsWith('Reference'));
+  const validTou = netAlt.plans.filter(p => p.feasible && p.converged && !p.schedule.startsWith('Reference'));
+  const touRange = validTou.length ? [Math.min(...validTou.map(p => p.vsPct)), Math.max(...validTou.map(p => p.vsPct))] : null;
+  const pctTxt = v => (v > 0 ? '+' : v < 0 ? '−' : '') + fmt(Math.abs(v), 1) + '%';
+  const touSaving = touRange ? Math.max(0, -touRange[0]) : 0;
+  const planName = p => p.schedule.startsWith('Reference') ? 'The lowest-energy reference' : p.schedule.split(' ').slice(0, 2).join(' ');
+  const below = NET.nodes.filter(n => n[1] < NET.target);
+  const acc1 = ACC.daily['PWA Chonburi'];
+  const st30 = ACC.storage.find(x => x.days === 30), st90 = ACC.storage.find(x => x.days === 90);
+
+  // ---------------------------------------------------------------- masthead, key messages, KPIs
+  document.getElementById('m-asof').textContent = fmtDate(t0);
+  document.getElementById('m-built').textContent = fmtDate(parseD(D.built));
+  document.getElementById('f-asof').textContent = fmtDate(t0);
+  document.getElementById('f-tariff').textContent =
+    `${fmt(NET.tariff.peak, 2)} THB/kWh at peak ${NET.tariff.peakHours}, ${fmt(NET.tariff.offPeak, 2)} off-peak`;
+
+  const verdicts = [
+    { area: 'Supply', kind: base.probByEnd < 10 ? 'good' : 'warning', chip: base.probByEnd < 10 ? 'Safe with diversions' : 'At risk',
+      title: 'Bang Phra holds through the dry season while diversions continue.',
+      body: `Storage is ${fmt(ST.now, 1)} million m³ (${fmt(ST.pct, 0)}% full). With usual diversions the chance of falling below 30% by ${fmtDate(parseD(base.endDate))} is ${fmt(base.probByEnd, 0)}%. If diversions stop, it rises to ${fmt(noDiv.probByEnd, 0)}%.` },
+    { area: 'Demand', kind: 'neutral', chip: 'Plan inputs matter',
+      title: 'Allocations shape demand more than weather does.',
+      body: `Users drew ${fmt(pvaOf('All users').pct, 0)}% of the allocation plan this water year: PWA ${fmt(pvaOf('PWA Chonburi').pct, 0)}%, Eastwater ${fmt(pvaOf('Eastwater').pct, 0)}%. Next-day demand is forecast within ${fmt(acc1[0][1], 1)}%; known allocation changes are the next gain.` },
+    { area: 'Network', kind: shortM3 > 0 ? 'critical' : 'good', chip: shortM3 > 0 ? 'Action needed' : 'Within capacity',
+      title: shortM3 > 0 ? `The ${shortName.replace('_HT', '')} zone cannot meet the model's demand.` : 'The network meets the model demand.',
+      body: `At ${fmt(netModel.demand)} m³/day, every usable pump still leaves ${shortName} about ${fmt(r100(shortM3))} m³/day short. ${validTou.length ? `Moving pumping to off-peak hours saves ${touSaving < 0.5 ? 'almost nothing' : 'only ' + fmt(touSaving, 1) + '%'}` : 'No off-peak pumping plan both saved money and passed the hydraulic check'}: the head tanks hold about ${fmt(r100(NET.tankStorage))} m³, ${fmt(NET.tankMinutes.model_demand)} minutes of demand.` }
+  ];
+  const vbox = document.getElementById('verdicts');
+  for (const v of verdicts) {
+    vbox.append(h('article', { class: 'verdict' },
+      h('div', { class: 'verdict-top' }, h('span', { class: 'area', text: v.area }), chip(v.kind, v.chip)),
+      h('h3', { text: v.title }), h('p', { text: v.body })));
+  }
+
+  const kpis = [
+    { label: 'Bang Phra storage', value: fmt(ST.now, 1), unit: 'million m³', kind: 'good', chip: 'Normal',
+      sub: `${fmt(ST.pct, 0)}% of capacity on ${fmtDate(t0)}`, src: 'Daily water report', spark: true },
+    { label: 'Chance of falling below 30%', value: fmt(base.probByEnd, 0) + '%', unit: `by ${fmtDate(parseD(base.endDate))}`,
+      kind: noDiv.probByEnd >= 25 ? 'warning' : 'good', chip: noDiv.probByEnd >= 25 ? 'Depends on diversions' : 'Low',
+      sub: `${fmt(noDiv.probByEnd, 0)}% if diversions stop`, src: `Outlook, ${OUT.nYears} inflow years` },
+    { label: 'Demand forecast error', value: fmt(acc1[0][1], 1) + '%', unit: 'next day', kind: 'good', chip: 'Usable now',
+      sub: `${fmt(acc1[6][1], 1)}% a week ahead, PWA Chonburi`, src: 'Backtest 2022–2025' },
+    { label: 'Storage forecast error', value: '±' + fmt(st30.esp, 1), unit: 'million m³ at 30 days', kind: 'good', chip: 'Usable now',
+      sub: `${fmt(100 * st30.esp / D.capacity, 0)}% of capacity; ±${fmt(st90.esp, 1)} at 90 days`, src: 'Backtest 2019–2025' },
+    { label: `${shortName.replace('_HT', '')} zone shortfall`, value: fmt(r100(shortM3)), unit: 'm³/day', kind: shortM3 > 0 ? 'critical' : 'good',
+      chip: shortM3 > 0 ? 'Action needed' : 'None', sub: `with all usable pumps, at ${fmt(netModel.demand)} m³/day demand`, src: 'EPANET, 343 pump combinations' },
+    { label: 'Pumping energy', value: fmt(NET.model.kwhPerM3, 3), unit: 'kWh per m³', kind: 'neutral', chip: 'Baseline',
+      sub: `≈ ${fmt(NET.model.thbPerM3, 2)} THB per m³ at the assumed tariff`, src: 'EPANET, model operation' }
+  ];
+  const kbox = document.getElementById('kpis');
+  for (const k of kpis) {
+    const tile = h('div', { class: 'kpi' },
+      h('div', { class: 'kpi-head' }, h('span', { class: 'kpi-label', text: k.label }), chip(k.kind, k.chip)),
+      h('div', { class: 'kpi-value' }, k.value, h('small', { text: k.unit })),
+      h('div', { class: 'kpi-sub', text: k.sub }));
+    if (k.spark) tile.append(sparkline());
+    tile.append(h('div', { class: 'kpi-src', text: k.src }));
+    kbox.append(tile);
+  }
+  function sparkline() {
+    const W = 220, H = 34, pts = ST.recent;
+    const svg = s('svg', { class: 'spark', viewBox: `0 0 ${W} ${H}`, preserveAspectRatio: 'none', 'aria-hidden': 'true' });
+    const vals = pts.map(p => p[1]), lo = Math.min(...vals), hi = Math.max(...vals);
+    const x = scale(0, pts.length - 1, 2, W - 6), y = scale(lo, hi, H - 4, 4);
+    s('path', { d: pathOf(pts.map((p, i) => [x(i), y(p[1])])), class: 'ln ln-s1', 'vector-effect': 'non-scaling-stroke' }, svg);
+    s('circle', { cx: x(pts.length - 1), cy: y(vals[vals.length - 1]), r: 3.5, class: 'f-s1 dot' }, svg);
+    const wrap = h('div', { title: `Storage over the last ${pts.length} days: ${fmt(vals[0], 1)} to ${fmt(vals[vals.length - 1], 1)} million m³` });
+    wrap.append(svg);
+    return wrap;
+  }
+
+  // ---------------------------------------------------------------- supply: outlook
+  const state = { demand: 'recent', div: 'typical', sched: null };
+  function monthTicks(startOff, endOff, every) {
+    const out = [], start = new Date(t0 + startOff * DAY);
+    let y = start.getUTCFullYear(), mo = start.getUTCMonth() + 1, i = 0;
+    for (;;) {
+      if (mo > 11) { mo = 0; y += 1; }
+      const t = Date.UTC(y, mo, 1), off = (t - t0) / DAY;
+      if (off > endOff) break;
+      if (i % every === 0) out.push({ x: off, label: MONTHS[mo] + (mo === 0 ? ' ' + y : '') });
+      mo += 1; i += 1;
+    }
+    return out;
+  }
+  function drawFan() {
+    const host = document.getElementById('fan');
+    const sc = scenByKey(state.demand, state.div);
+    const narrow = host.clientWidth < 560;
+    const hist = ST.recent.map(p => [(parseD(p[0]) - t0) / DAY, p[1]]);
+    const fc = sc.rows.map(r => ({ x: (parseD(r[0]) - t0) / DAY, d: r[0], p10: r[1], p50: r[2], p90: r[3], p: r[4] }));
+    const xMin = hist[0][0], xMax = fc[fc.length - 1].x;
+    const f = frame(host, { height: narrow ? 270 : 340, margin: { l: 38, r: narrow ? 14 : 70, t: 24, b: 30 },
+      x: [xMin, xMax], y: [0, 125], yTicks: [0, 20, 40, 60, 80, 100, 120], xTicks: monthTicks(xMin, xMax, narrow ? 2 : 1) });
+    const { g, x, y } = f;
+    s('line', { x1: f.m.l, x2: f.W - f.m.r, y1: y(D.capacity), y2: y(D.capacity), class: 'base' }, g);
+    stext(g, f.m.l + 4, y(D.capacity) - 6, `Full, ${fmt(D.capacity)}`, { class: 'lbl' });
+    const band = [[x(0), y(ST.now)], ...fc.map(r => [x(r.x), y(r.p10)])];
+    const top = [...fc.map(r => [x(r.x), y(r.p90)])].reverse();
+    s('path', { d: pathOf(band.concat(top)) + 'Z', class: 'band' }, g);
+    s('line', { x1: f.m.l, x2: f.W - f.m.r, y1: y(D.critical), y2: y(D.critical), class: 'crit' }, g);
+    stext(g, f.m.l + 4, y(D.critical) + 15, `Critical, ${fmt(D.critical, 1)}`, { class: 'crit-lbl' });
+    s('line', { x1: x(0), x2: x(0), y1: f.m.t - 6, y2: f.H - f.m.b, class: 'today' }, g);
+    stext(g, x(0) + 5, f.m.t - 10, 'Today ' + fmtDate(t0).replace(/ \d{4}$/, ''), { class: 'lbl' });
+    s('path', { d: pathOf(hist.map(p => [x(p[0]), y(p[1])])), class: 'ln ln-ink' }, g);
+    s('path', { d: pathOf([[x(0), y(ST.now)], ...fc.map(r => [x(r.x), y(r.p50)])]), class: 'ln ln-s1' }, g);
+    const last = fc[fc.length - 1];
+    s('circle', { cx: x(last.x), cy: y(last.p50), r: 4, class: 'f-s1 dot' }, g);
+    s('circle', { cx: x(0), cy: y(ST.now), r: 4, class: 'f-ink dot' }, g);
+    if (!narrow) {
+      stext(g, x(last.x) + 8, y(last.p50) + 4, fmt(last.p50, 1), { class: 'lbl-strong' });
+      stext(g, x(last.x) + 8, y(last.p50) + 19, 'median', { class: 'lbl' });
+    }
+    const xh = s('line', { y1: f.m.t, y2: f.H - f.m.b, class: 'xhair', visibility: 'hidden' }, g);
+    const dot = s('circle', { r: 4.5, class: 'f-s1 dot', visibility: 'hidden' }, g);
+    let cur = 0;
+    function show(off, cx, cy) {
+      if (off == null) { xh.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); return; }
+      cur = clamp(Math.round(off), Math.ceil(xMin), xMax);
+      const px = x(cur);
+      xh.setAttribute('x1', px); xh.setAttribute('x2', px); xh.setAttribute('visibility', 'visible');
+      let head, rows, vy;
+      if (cur <= 0) {
+        const p = hist.find(q => q[0] === cur) || hist[hist.length - 1];
+        head = fmtDate(t0 + p[0] * DAY); vy = p[1];
+        rows = [{ cls: 'c-ink', label: 'Recorded storage', value: fmt(p[1], 1) + ' million m³' }];
+        dot.setAttribute('class', 'f-ink dot');
+      } else {
+        const r = fc[cur - 1];
+        head = fmtDate(parseD(r.d)) + ' · outlook'; vy = r.p50;
+        rows = [{ cls: 'c-s1', label: 'Median', value: fmt(r.p50, 1) + ' million m³' },
+                { cls: 'bg-band', box: true, label: 'Range (10–90%)', value: `${fmt(r.p10, 1)}–${fmt(r.p90, 1)}` },
+                { cls: 'c-crit', label: 'Chance below 30% by then', value: fmt(100 * r.p, 0) + '%' }];
+        dot.setAttribute('class', 'f-s1 dot');
+      }
+      dot.setAttribute('cx', px); dot.setAttribute('cy', y(vy)); dot.setAttribute('visibility', 'visible');
+      if (cx == null) [cx, cy] = anchorOf(f, px, y(vy));
+      showTip(head, rows, cx, cy);
+    }
+    hitLayer(f, (px, cx, cy) => show(px == null ? null : x.inv(px), cx, cy), d => show(d === 0 ? 0 : cur + d));
+    const weekly = fc.filter((r, i) => i % 7 === 6 || i === fc.length - 1);
+    table('fan', ['Date', 'P10', 'Median', 'P90', 'Chance below 30% by date'],
+      weekly.map(r => [fmtDate(parseD(r.d)), fmt(r.p10, 1), fmt(r.p50, 1), fmt(r.p90, 1), fmt(100 * r.p, 0) + '%']), [1, 2, 3, 4]);
+  }
+  function describeScenario() {
+    const sc = scenByKey(state.demand, state.div);
+    const useTxt = state.demand === 'recent' ? `recent use of ${fmt(sc.useStart)} m³/day (last 28 days)` :
+      `the allocation plan, up to ${fmt(sc.useMax)} m³/day`;
+    const divTxt = state.div === 'typical' ? 'diversions into Bang Phra as in the last three years' : 'no diversions into Bang Phra';
+    document.getElementById('fan-sub').textContent = `From ${fmtDate(t0)} for ${OUT.horizonDays} days, assuming ${useTxt} and ${divTxt}.`;
+    document.getElementById('scen-desc').textContent = `${state.demand === 'recent' ? 'Recent use' : 'Allocation plan'}, ${state.div === 'typical' ? 'usual diversions' : 'no diversions'}`;
+    const figs = document.getElementById('scen-figs');
+    figs.textContent = '';
+    const fig = (v, unit, k) => h('div', { class: 'fig' }, h('div', { class: 'v' }, v, unit ? h('small', { text: unit }) : null), h('div', { class: 'k', text: k }));
+    figs.append(
+      fig(fmt(sc.p50_90, 1), 'million m³', 'Median storage in 90 days'),
+      fig(fmt(sc.p10_90, 1), 'million m³', 'Low case (P10) in 90 days'),
+      fig(fmt(sc.probByEnd, 0) + '%', null, `Chance of falling below 30% by ${fmtDate(parseD(sc.endDate))}`),
+      fig(sc.riskDate ? fmtDate(parseD(sc.riskDate)) : 'None', null, 'First date the low case drops below 30%'));
+    const msg = sc.probByEnd >= 25 ? `Without action, a shortage becomes likely. Restarting diversions or reducing draw before ${fmtDate(parseD(sc.riskDate || sc.endDate))} keeps storage above the critical level.`
+      : sc.probByEnd > 0 ? 'A small risk remains in the driest inflow years. Watch storage against the low case each week.'
+      : 'No past inflow year takes storage below the critical level under these assumptions.';
+    document.getElementById('scen-callout').textContent = msg;
+  }
+  function setupSeg(id, key, cb) {
+    const box = document.getElementById(id);
+    box.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      box.querySelectorAll('button').forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+      state[key] = b.dataset.v;
+      cb();
+    }));
+  }
+  setupSeg('seg-demand', 'demand', () => { describeScenario(); drawFan(); });
+  setupSeg('seg-div', 'div', () => { describeScenario(); drawFan(); });
+
+  // ---------------------------------------------------------------- supply: history
+  function drawHist() {
+    const host = document.getElementById('hist');
+    const pts = ST.monthly.map(p => [parseD(p[0] + '-01'), p[1]]);
+    const narrow = host.clientWidth < 560;
+    const y0 = new Date(pts[0][0]).getUTCFullYear(), y1 = new Date(pts[pts.length - 1][0]).getUTCFullYear();
+    const ticks = [];
+    for (let yr = Math.ceil(y0 / 5) * 5; yr <= y1; yr += narrow ? 10 : 5) ticks.push({ x: Date.UTC(yr, 0, 1), label: String(yr) });
+    const f = frame(host, { height: narrow ? 200 : 220, margin: { l: 38, r: 14, t: 14, b: 30 },
+      x: [pts[0][0], pts[pts.length - 1][0]], y: [0, 125], yTicks: [0, 40, 80, 120], xTicks: ticks });
+    const { g, x, y } = f;
+    const line = pts.map(p => [x(p[0]), y(p[1])]);
+    s('path', { d: pathOf([[line[0][0], y(0)], ...line, [line[line.length - 1][0], y(0)]]) + 'Z', class: 'area-s1' }, g);
+    s('line', { x1: f.m.l, x2: f.W - f.m.r, y1: y(D.critical), y2: y(D.critical), class: 'crit' }, g);
+    s('path', { d: pathOf(line), class: 'ln ln-s1', 'stroke-width': 1.6 }, g);
+    const low = pts.find(p => p[0] === parseD(ST.lowest.month + '-01'));
+    s('circle', { cx: x(low[0]), cy: y(low[1]), r: 4, class: 'f-ink dot' }, g);
+    stext(g, x(low[0]) + 8, y(low[1]) + 4, `Lowest ${fmt(low[1], 1)}, ${fmtMonth(low[0])}`, { class: 'lbl' });
+    const xh = s('line', { y1: f.m.t, y2: f.H - f.m.b, class: 'xhair', visibility: 'hidden' }, g);
+    const dot = s('circle', { r: 4.5, class: 'f-s1 dot', visibility: 'hidden' }, g);
+    let cur = pts.length - 1;
+    function show(i, cx, cy) {
+      if (i == null) { xh.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); return; }
+      cur = clamp(i, 0, pts.length - 1);
+      const p = pts[cur], px = x(p[0]);
+      xh.setAttribute('x1', px); xh.setAttribute('x2', px); xh.setAttribute('visibility', 'visible');
+      dot.setAttribute('cx', px); dot.setAttribute('cy', y(p[1])); dot.setAttribute('visibility', 'visible');
+      if (cx == null) [cx, cy] = anchorOf(f, px, y(p[1]));
+      showTip(fmtMonth(p[0]), [{ cls: 'c-s1', label: 'Average storage', value: fmt(p[1], 1) + ' million m³' },
+        { label: 'Share of capacity', value: fmt(100 * p[1] / D.capacity, 0) + '%' }], cx, cy);
+    }
+    hitLayer(f, (px, cx, cy) => {
+      if (px == null) return show(null);
+      const t = x.inv(px);
+      let best = 0, bd = Infinity;
+      pts.forEach((p, i) => { const dd = Math.abs(p[0] - t); if (dd < bd) { bd = dd; best = i; } });
+      show(best, cx, cy);
+    }, d => show(d === 0 ? cur : cur + d * (d > 1 || d < -1 ? 2 : 1)));
+    document.getElementById('hist-sub').textContent = `The red line is 30% of capacity. Storage fell below it in the droughts shown; the lowest month was ${fmtMonth(low[0])}.`;
+    const yearly = {};
+    for (const p of pts) { const yr = new Date(p[0]).getUTCFullYear(); (yearly[yr] = yearly[yr] || []).push(p[1]); }
+    table('hist', ['Year', 'Lowest month', 'Highest month', 'Average'],
+      Object.entries(yearly).map(([yr, v]) => [yr, fmt(Math.min(...v), 1), fmt(Math.max(...v), 1), fmt(v.reduce((a, b) => a + b, 0) / v.length, 1)]), [1, 2, 3]);
+  }
+
+  // ---------------------------------------------------------------- demand
+  function drawDemand() {
+    const host = document.getElementById('demand-chart');
+    const rows = D.demand.annual;
+    const narrow = host.clientWidth < 520;
+    const top = niceMax(Math.max(...rows.map(r => r[1])), 4);
+    const ticks = [];
+    for (let v = 0; v <= top.max + 1e-9; v += top.step) ticks.push(v);
+    const xt = rows.filter(r => r[0] % (narrow ? 10 : 5) === 0).map(r => ({ x: r[0], label: String(r[0]) }));
+    const f = frame(host, { height: narrow ? 230 : 260, margin: { l: 44, r: narrow ? 14 : 92, t: 12, b: 30 },
+      x: [rows[0][0], rows[rows.length - 1][0]], y: [0, top.max], yTicks: ticks, yFmt: v => fmt(v / 1000), xTicks: xt });
+    const { g, x, y } = f;
+    const series = [{ i: 1, cls: 'ln-s1', dot: 'f-s1', name: 'All users', key: 'c-s1' }, { i: 2, cls: 'ln-s2', dot: 'f-s2', name: 'PWA Chonburi', key: 'c-s2' }];
+    for (const sr of series) {
+      s('path', { d: pathOf(rows.map(r => [x(r[0]), y(r[sr.i])])), class: 'ln ' + sr.cls }, g);
+      const l = rows[rows.length - 1];
+      s('circle', { cx: x(l[0]), cy: y(l[sr.i]), r: 4, class: sr.dot + ' dot' }, g);
+      if (!narrow) stext(g, x(l[0]) + 8, y(l[sr.i]) + 4, `${kfmt(l[sr.i])} ${sr.i === 1 ? 'all' : 'PWA'}`, { class: 'lbl-strong' });
+    }
+    const xh = s('line', { y1: f.m.t, y2: f.H - f.m.b, class: 'xhair', visibility: 'hidden' }, g);
+    let cur = rows.length - 1;
+    function show(i, cx, cy) {
+      if (i == null) { xh.setAttribute('visibility', 'hidden'); return; }
+      cur = clamp(i, 0, rows.length - 1);
+      const r = rows[cur], px = x(r[0]);
+      xh.setAttribute('x1', px); xh.setAttribute('x2', px); xh.setAttribute('visibility', 'visible');
+      if (cx == null) [cx, cy] = anchorOf(f, px, y(r[1]));
+      showTip(String(r[0]), series.map(sr => ({ cls: sr.key, label: sr.name, value: fmt(r[sr.i]) + ' m³/day' })), cx, cy);
+    }
+    hitLayer(f, (px, cx, cy) => show(px == null ? null : Math.round(x.inv(px)) - rows[0][0], cx, cy), d => show(d === 0 ? cur : cur + d));
+    table('demand', ['Year', 'All users, m³/day', 'PWA Chonburi, m³/day'], rows.map(r => [String(r[0]), fmt(r[1]), fmt(r[2])]), [1, 2]);
+  }
+  function renderDemandText() {
+    const a = D.demand.first, b = D.demand.last;
+    document.getElementById('demand-intro').textContent =
+      `Average use grew from ${fmt(r100(a.total))} m³/day in ${a.year} to ${fmt(r100(b.total))} in ${b.year}, ${fmt(b.total / a.total, 1)} times as much. Waterworks supply (PWA Chonburi) is the largest user at ${fmt(r100(b.pwa))} m³/day.`;
+    const p = pvaOf('All users');
+    document.getElementById('pva-sub').textContent = `Water year to date, ${fmtDate(parseD(p.first))} to ${fmtDate(parseD(p.last))}, average m³ per day`;
+    const box = document.getElementById('meters');
+    for (const r of pva) {
+      const row = h('div', { class: 'meter-row' + (r.user === 'All users' ? ' total' : '') });
+      const m = h('div', { class: 'meter', role: 'img', 'aria-label': `${r.user}: ${fmt(r.pct)}% of plan` });
+      const i = h('i');
+      i.style.width = clamp(r.pct, 0, 100) + '%';
+      m.append(i);
+      row.append(h('div', { class: 'meter-name', text: r.user }), m,
+        h('div', { class: 'meter-val' }, fmt(r.pct) + '%', h('span', { text: `${kfmt(r.actual)} of ${kfmt(r.plan)}` })));
+      box.append(row);
+    }
+  }
+
+  // ---------------------------------------------------------------- accuracy
+  function drawAccDemand() {
+    const host = document.getElementById('acc-d');
+    const rows = acc1;
+    const ymax = niceMax(Math.max(6, ...rows.map(r => Math.max(r[1], r[3]))) * 1.05, 4);
+    const ticks = [];
+    for (let v = 0; v <= ymax.max + 1e-9; v += ymax.step) ticks.push(v);
+    const f = frame(host, { height: 230, margin: { l: 40, r: 16, t: 12, b: 34 }, x: [0.6, 7.4], y: [0, ymax.max], yTicks: ticks,
+      yFmt: v => v + '%', xTicks: rows.map(r => ({ x: r[0], label: r[0] === 1 ? '1 day' : r[0] + ' d' })) });
+    const { g, x, y } = f;
+    const sr = [{ i: 1, cls: 'ln-s3', dot: 'f-s3', key: 'c-s3', name: 'Best simple method' }, { i: 3, cls: 'ln-s2', dot: 'f-s2', key: 'c-s2', name: 'Machine learning' }];
+    for (const q of sr) {
+      s('path', { d: pathOf(rows.map(r => [x(r[0]), y(r[q.i])])), class: 'ln ' + q.cls }, g);
+      for (const r of rows) s('circle', { cx: x(r[0]), cy: y(r[q.i]), r: 4, class: q.dot + ' dot' }, g);
+    }
+    stext(g, x(1), y(rows[0][1]) + 18, fmt(rows[0][1], 1) + '%', { class: 'lbl-strong', 'text-anchor': 'middle' });
+    stext(g, x(7), y(rows[6][1]) + 18, fmt(rows[6][1], 1) + '%', { class: 'lbl-strong', 'text-anchor': 'middle' });
+    const xh = s('line', { y1: f.m.t, y2: f.H - f.m.b, class: 'xhair', visibility: 'hidden' }, g);
+    let cur = 0;
+    function show(i, cx, cy) {
+      if (i == null) { xh.setAttribute('visibility', 'hidden'); return; }
+      cur = clamp(i, 0, rows.length - 1);
+      const r = rows[cur], px = x(r[0]);
+      xh.setAttribute('x1', px); xh.setAttribute('x2', px); xh.setAttribute('visibility', 'visible');
+      if (cx == null) [cx, cy] = anchorOf(f, px, y(r[1]));
+      showTip(`${r[0]} day${r[0] > 1 ? 's' : ''} ahead`, [{ cls: 'c-s3', label: r[2], value: fmt(r[1], 1) + '%' },
+        { cls: 'c-s2', label: 'Machine learning', value: fmt(r[3], 1) + '%' }], cx, cy);
+    }
+    hitLayer(f, (px, cx, cy) => show(px == null ? null : Math.round(x.inv(px)) - 1, cx, cy), d => show(d === 0 ? cur : cur + d));
+    const tot = ACC.daily['Total use'];
+    document.getElementById('acc-d-sub').textContent = `Days ahead · forecasts made ${fmtDate(parseD(ACC.demandPeriod[0]))} to ${fmtDate(parseD(ACC.demandPeriod[1]))}`;
+    document.getElementById('acc-d-msg').textContent = `A short average of recent days is as accurate as machine learning, because demand moves in steps set by allocation decisions. Total use is harder to forecast: ${fmt(tot[0][1], 1)}% next day, ${fmt(tot[6][1], 1)}% a week ahead.`;
+    table('accd', ['Days ahead', 'Best simple method', 'Method', 'Machine learning', 'ML 10–90% range covers'],
+      rows.map(r => [String(r[0]), fmt(r[1], 1) + '%', r[2], fmt(r[3], 1) + '%', fmt(r[4]) + '%']), [0, 1, 3, 4]);
+  }
+  function drawAccStorage() {
+    const host = document.getElementById('acc-s');
+    const rows = ACC.storage;
+    const ymax = niceMax(Math.max(...rows.map(r => Math.max(r.climatology, r.ml, r.esp))) * 1.1, 3);
+    const ticks = [];
+    for (let v = 0; v <= ymax.max + 1e-9; v += ymax.step) ticks.push(v);
+    const f = frame(host, { height: 230, margin: { l: 40, r: 16, t: 14, b: 34 }, x: [0, rows.length], y: [0, ymax.max], yTicks: ticks,
+      xTicks: rows.map((r, i) => ({ x: i + 0.5, label: r.days + ' days ahead' })) });
+    const { g, x, y } = f;
+    const band = x(1) - x(0), bw = Math.min(24, (band * 0.7 - 4) / 3), gap = 2;
+    const sr = [{ k: 'climatology', cls: 'f-s3', key: 'bg-s3', name: 'Seasonal average' }, { k: 'ml', cls: 'f-s2', key: 'bg-s2', name: 'Machine learning' },
+      { k: 'esp', cls: 'f-s1', key: 'bg-s1', name: 'Inflow simulation' }];
+    rows.forEach((r, i) => {
+      const cx = x(i + 0.5), x0 = cx - (3 * bw + 2 * gap) / 2;
+      sr.forEach((q, j) => {
+        const v = r[q.k], bx = x0 + j * (bw + gap), by = y(v);
+        const p = s('path', { d: colPath(bx, by, bw, y(0) - by, 4), class: q.cls + ' mark', tabindex: 0 }, g);
+        const tipFor = (ex, ey) => showTip(`${r.days} days ahead`, [{ cls: q.key, box: true, label: q.name, value: '±' + fmt(v, 2) + ' million m³' }].concat(
+          q.k === 'esp' ? [{ label: 'Range covers actual', value: fmt(r.espCover) + '%' }] : q.k === 'ml' ? [{ label: 'Range covers actual', value: fmt(r.mlCover) + '%' }] : []), ex, ey);
+        p.addEventListener('pointermove', e => tipFor(e.clientX, e.clientY));
+        p.addEventListener('pointerleave', hideTip);
+        p.addEventListener('focus', () => { const [ax, ay] = anchorOf(f, bx + bw / 2, by); tipFor(ax, ay); });
+        p.addEventListener('blur', hideTip);
+        if (q.k === 'esp') stext(g, bx + bw / 2, by - 6, fmt(v, 1), { class: 'lbl-strong', 'text-anchor': 'middle' });
+      });
+    });
+    document.getElementById('acc-s-sub').textContent = `Average error by horizon · forecasts made ${fmtDate(parseD(ACC.storagePeriod[0]))} to ${fmtDate(parseD(ACC.storagePeriod[1]))}`;
+    document.getElementById('acc-s-msg').textContent = `The inflow simulation is the most accurate: ±${fmt(st30.esp, 1)} million m³ a month ahead. Its warning of a fall below 30% within 90 days scores ${fmt(st90.brierSkill, 2)} on a 0–1 skill scale against guessing from history.`;
+    table('accs', ['Horizon', 'Seasonal average', 'Machine learning', 'Inflow simulation', 'Simulation range covers actual', 'Shortage warning skill'],
+      rows.map(r => [r.days + ' days', fmt(r.climatology, 2), fmt(r.ml, 2), fmt(r.esp, 2), fmt(r.espCover) + '%', fmt(r.brierSkill, 2)]), [1, 2, 3, 4, 5]);
+  }
+
+  // ---------------------------------------------------------------- network
+  function renderCapacity() {
+    const box = document.getElementById('capacity-card');
+    const kind = shortM3 > 0 ? 'critical' : 'good';
+    box.append(h('div', { class: 'card-head' },
+      h('div', { class: 'card-title' }, h('h3', { text: `At the model's demand of ${fmt(netModel.demand)} m³/day` }),
+        h('p', { class: 'sub', text: `${netModel.maxPumping.replace(/ \+ /g, ' + ')} pumps (NPL2 + NPL3 + TM Pond) is the most the network can run while meeting the pressure floors. TM Pond pumps 3 to 6 cannot run in the model.` })),
+      chip(kind, shortM3 > 0 ? 'Not enough capacity' : 'Enough capacity')));
+    const figs = h('div', { class: 'figs' });
+    figs.style.gridTemplateColumns = 'repeat(auto-fit, minmax(180px, 1fr))';
+    const fig = (v, unit, k) => h('div', { class: 'fig' }, h('div', { class: 'v' }, v, unit ? h('small', { text: unit }) : null), h('div', { class: 'k', text: k }));
+    for (const t of netModel.tankFlows) {
+      figs.append(fig((t[1] > 0 ? '+' : t[1] < 0 ? '−' : '') + fmt(Math.abs(t[1])), 'm³/day', `Net flow into ${t[0]} at full pumping`));
+    }
+    figs.append(fig(fmt(NET.tankStorage), 'm³', `Head-tank storage, about ${fmt(NET.tankMinutes.model_demand)} minutes of demand`));
+    figs.append(fig(fmt(netAlt.demand), 'm³/day', 'Demand without nodes 71 and 678; plans below use this'));
+    box.append(figs);
+  }
+  function drawPressure() {
+    const host = document.getElementById('pressure');
+    const rows = NET.nodes;
+    const narrow = host.clientWidth < 420;
+    const rh = 19, labelW = narrow ? 92 : 112;
+    const maxV = niceMax(Math.max(...rows.map(r => r[1])) * 1.05, 4);
+    const ticks = [];
+    for (let v = 0; v <= maxV.max + 1e-9; v += maxV.step) ticks.push(v);
+    host.textContent = '';
+    const W = Math.max(260, Math.floor(host.clientWidth)), m = { l: labelW, r: 50, t: 8, b: 28 };
+    const H = m.t + rows.length * rh + m.b;
+    const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, 'aria-hidden': 'true' }, host);
+    const x = scale(0, maxV.max, m.l, W - m.r);
+    const g = s('g', {}, svg);
+    for (const v of ticks) {
+      s('line', { x1: x(v), x2: x(v), y1: m.t, y2: H - m.b, class: v === 0 ? 'base' : 'gl' }, g);
+      stext(g, x(v), H - m.b + 18, v, { 'text-anchor': 'middle' });
+    }
+    rows.forEach((r, i) => {
+      const yy = m.t + i * rh + 3, bh = rh - 7, low = r[1] < NET.target;
+      stext(g, m.l - 8, yy + bh - 2, r[0], { 'text-anchor': 'end', class: 'node-lbl' });
+      const p = s('path', { d: barPath(x(0), yy, Math.max(1, x(r[1]) - x(0)), bh, 4), class: (low ? 'f-warn' : 'f-s1') + ' mark', tabindex: 0 }, g);
+      if (low) stext(g, x(r[1]) + 6, yy + bh - 2, fmt(r[1], 1) + ' m', { class: 'lbl-strong' });
+      const tipFor = (ex, ey) => showTip(r[0], [{ cls: low ? 'bg-warn' : 'bg-s1', box: true, label: 'Lowest pressure', value: fmt(r[1], 1) + ' m' },
+        { label: 'Demand', value: fmt(r[2]) + ' m³/day' }, { label: 'Elevation', value: fmt(r[3], 1) + ' m' }], ex, ey);
+      p.addEventListener('pointermove', e => tipFor(e.clientX, e.clientY));
+      p.addEventListener('pointerleave', hideTip);
+      p.addEventListener('focus', () => { const b = svg.getBoundingClientRect(); tipFor(b.left + x(r[1]), b.top + yy); });
+      p.addEventListener('blur', hideTip);
+    });
+    s('line', { x1: x(NET.target), x2: x(NET.target), y1: m.t - 4, y2: H - m.b, class: 'crit' }, g);
+    document.getElementById('pr-sub').textContent = `Model operation over a day · ${below.length} of ${rows.length} customers fall below the ${NET.target} m target (red line)`;
+    table('pr', ['Customer node', 'Lowest pressure, m', 'Demand, m³/day', 'Elevation, m'], rows.map(r => [r[0], fmt(r[1], 1), fmt(r[2]), fmt(r[3], 1)]), [1, 2, 3]);
+  }
+  function renderPlans() {
+    const plans = netAlt.plans;
+    document.getElementById('plans-sub').textContent = `Without nodes 71 and 678 (${fmt(netAlt.demand)} m³/day). Costs use the assumed time-of-use tariff.`;
+    const t = h('table');
+    const hr = h('tr');
+    ['Plan', 'Hydraulic check', 'Cost per day', 'vs reference', 'kWh per m³', 'Lowest pressure', 'Pump starts'].forEach((c, i) =>
+      hr.append(h('th', { class: i >= 2 ? 'num' : '', text: c, scope: 'col' })));
+    t.append(h('thead', {}, hr));
+    const tb = h('tbody');
+    for (const p of plans) {
+      const valid = p.feasible && p.converged;
+      const name = p.schedule.replace('Reference (lowest energy, ignores tariff)', 'Reference: lowest energy');
+      const kind = !p.feasible ? 'critical' : !p.converged ? 'critical' : p.status === 'Pass' ? 'good' : 'warning';
+      const label = !p.feasible ? 'No plan found' : !p.converged ? 'Rejected' : p.status === 'Pass' ? 'Pass' : 'Warning';
+      const tr = h('tr', { class: valid ? '' : 'dim' });
+      const c0 = h('td', { text: name });
+      const c1 = h('td'); c1.append(chip(kind, label));
+      tr.append(c0, c1,
+        h('td', { class: 'num', text: p.cost == null ? '–' : fmt(p.cost) + ' THB' }),
+        h('td', { class: 'num', text: p.schedule.startsWith('Reference') ? '–' : valid ? pctTxt(p.vsPct) : 'n/a' }),
+        h('td', { class: 'num', text: fmt(p.kwhPerM3, 3) }),
+        h('td', { class: 'num', text: p.minPressure == null ? '–' : fmt(p.minPressure, 1) + ' m' }),
+        h('td', { class: 'num', text: p.starts == null ? '–' : String(p.starts) }));
+      tb.append(tr);
+    }
+    t.append(tb);
+    document.getElementById('plans-table').append(t);
+    const rejected = plans.filter(p => p.feasible && !p.converged && !p.schedule.startsWith('Reference')).map(planName);
+    const refOk = ref && ref.feasible && ref.converged;
+    const range = touRange ? (touRange[0] === touRange[1] ? pctTxt(touRange[0]) : `${pctTxt(touRange[0])} to ${pctTxt(touRange[1])}`) : 'about the same';
+    document.getElementById('plans-msg').textContent =
+      (validTou.length > 1 ? `Plans that shift pumping away from peak hours and pass every check cost ${range} against the lowest-energy plan.`
+        : validTou.length === 1 ? `The one plan that shifts pumping away from peak hours and passes every check costs ${range} against the lowest-energy plan.`
+        : 'No plan that shifts pumping away from peak hours passed every check.') +
+      ' The head tanks are too small to store water for later, so savings need upstream storage or more efficient pumps.' +
+      (rejected.length ? ` ${rejected.join(' and ')} looked cheaper but failed the hydraulic check, so ${rejected.length > 1 ? 'they are' : 'it is'} not offered.` : '') +
+      (refOk ? '' : ' The lowest-energy reference itself did not pass the check in this run, so the comparison is indicative only.');
+  }
+  function drawSchedule() {
+    const scheds = NET.schedules[netAlt.name];
+    const host = document.getElementById('sched');
+    const rows = scheds[state.sched];
+    const narrow = host.clientWidth < 480;
+    const total = rows.map(r => r[1] + r[2] + r[3]);
+    const top = Math.max(14, ...total);
+    const f = frame(host, { height: 220, margin: { l: 34, r: 12, t: 12, b: 30 }, x: [0, 24], y: [0, top], yTicks: [0, 4, 8, 12],
+      xTicks: [0, 6, 12, 18, 24].map(v => ({ x: v, label: String(v).padStart(2, '0') + ':00' })) });
+    const { g, x, y } = f;
+    const peakIdx = rows.map((r, i) => r[4] > NET.tariff.offPeak + 1e-6 ? i : -1).filter(i => i >= 0);
+    if (peakIdx.length) s('rect', { x: x(peakIdx[0]), y: f.m.t, width: x(peakIdx[peakIdx.length - 1] + 1) - x(peakIdx[0]), height: f.H - f.m.t - f.m.b, class: 'peak' }, g);
+    if (peakIdx.length) stext(g, x(peakIdx[0]) + 6, f.m.t + 12, 'Peak tariff', { class: 'lbl' });
+    const band = x(1) - x(0), bw = Math.min(24, band - 3), gap = 2;
+    const cls = ['f-s1', 'f-s2', 'f-s3'], names = ['NPL2', 'NPL3', 'TM Pond'], keys = ['bg-s1', 'bg-s2', 'bg-s3'];
+    rows.forEach((r, i) => {
+      const bx = x(i) + (band - bw) / 2;
+      let acc = 0;
+      const segs = [r[1], r[2], r[3]];
+      const lastSeg = segs.reduce((k, v, j) => v > 0 ? j : k, -1);
+      segs.forEach((v, j) => {
+        if (v <= 0) return;
+        const yTop = y(acc + v), yBot = y(acc);
+        const hh = Math.max(1, yBot - yTop - (acc > 0 ? gap : 0));
+        const d = j === lastSeg ? colPath(bx, yTop, bw, hh, 4) : `M${bx},${yTop}h${bw}v${hh}h${-bw}Z`;
+        s('path', { d, class: cls[j] }, g);
+        acc += v;
+      });
+      const hit = s('rect', { x: x(i), y: f.m.t, width: band, height: f.H - f.m.t - f.m.b, class: 'hit', tabindex: 0 }, g);
+      const tipFor = (ex, ey) => showTip(`${String(r[0]).padStart(2, '0')}:00–${String(r[0] + 1).padStart(2, '0')}:00`,
+        segs.map((v, j) => ({ cls: keys[j], box: true, label: names[j], value: v === 1 ? '1 pump' : v + ' pumps' })).concat([{ label: 'Tariff', value: fmt(r[4], 2) + ' THB/kWh' }]), ex, ey);
+      hit.addEventListener('pointermove', e => tipFor(e.clientX, e.clientY));
+      hit.addEventListener('pointerleave', hideTip);
+      hit.addEventListener('focus', () => { const [ax, ay] = anchorOf(f, bx + bw / 2, y(total[i])); tipFor(ax, ay); });
+      hit.addEventListener('blur', hideTip);
+    });
+    const peakAvg = peakIdx.length ? peakIdx.reduce((a, i) => a + total[i], 0) / peakIdx.length : 0;
+    const offIdx = rows.map((r, i) => i).filter(i => !peakIdx.includes(i));
+    const offAvg = offIdx.reduce((a, i) => a + total[i], 0) / Math.max(1, offIdx.length);
+    document.getElementById('sched-sub').textContent = `${state.sched.replace(' (lowest energy, ignores tariff)', '')} · on average ${fmt(peakAvg, 1)} pumps in peak hours and ${fmt(offAvg, 1)} off-peak`;
+    table('sched', ['Hour', 'NPL2', 'NPL3', 'TM Pond', 'Total', 'Tariff, THB/kWh'],
+      rows.map((r, i) => [String(r[0]).padStart(2, '0') + ':00', r[1], r[2], r[3], total[i], fmt(r[4], 2)]), [1, 2, 3, 4, 5]);
+  }
+  function setupSchedules() {
+    const scheds = NET.schedules[netAlt.name] || {};
+    const valid = new Set(netAlt.plans.filter(p => p.feasible && p.converged).map(p => p.schedule));
+    const names = Object.keys(scheds).filter(n => valid.has(n));
+    const box = document.getElementById('seg-sched');
+    state.sched = names[0];
+    names.forEach((n, i) => {
+      const b = h('button', { type: 'button', 'aria-pressed': String(i === 0), text: n.startsWith('Reference') ? 'Reference' : n.replace(/^Plan /, 'Plan ') });
+      b.addEventListener('click', () => {
+        box.querySelectorAll('button').forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+        state.sched = n; drawSchedule();
+      });
+      box.append(b);
+    });
+  }
+
+  // ---------------------------------------------------------------- roadmap
+  function renderRoad() {
+    const steps = [
+      { code: 'POC', title: 'Data and baseline', kind: 'good', chip: 'Done', text: '35 years of reservoir data cleaned and checked; network model runs; baseline cost and accuracy measured.' },
+      { code: 'QW1', title: 'See demand ahead', kind: 'good', chip: 'Baseline ready', text: 'Daily and weekly forecasts tested. Next: customer meters and allocation changes as inputs.' },
+      { code: 'QW2', title: 'Lower pumping cost', kind: 'warning', chip: 'Prototype', text: 'Hour-by-hour pump plans work. Savings need the real tariff, pump data and upstream storage.' },
+      { code: 'QW3', title: 'Hydraulic check', kind: 'good', chip: 'Working', text: 'Every plan runs through EPANET and is graded pass, warning or fail before anyone sees it.' },
+      { code: 'QW4', title: 'Decision dashboard', kind: 'neutral', chip: 'Draft', text: 'This page. Next: role views for operators and executives on live data.' }
+    ];
+    const box = document.getElementById('road');
+    for (const st of steps) box.append(h('div', { class: 'step' }, h('span', { class: 'code', text: st.code }), h('h3', { text: st.title }), chip(st.kind, st.chip), h('p', { text: st.text })));
+  }
+
+  // ---------------------------------------------------------------- theme
+  const themeBtn = document.getElementById('theme-btn');
+  const modes = ['auto', 'light', 'dark'];
+  let mode = 'auto';
+  try { mode = localStorage.getItem('poc-theme') || 'auto'; } catch (e) { mode = 'auto'; }
+  function applyTheme() {
+    if (mode === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', mode);
+    themeBtn.textContent = 'Theme: ' + mode;
+  }
+  themeBtn.addEventListener('click', () => {
+    mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+    try { localStorage.setItem('poc-theme', mode); } catch (e) { /* storage unavailable */ }
+    applyTheme();
+  });
+  applyTheme();
+
+  // ---------------------------------------------------------------- render
+  renderDemandText();
+  renderCapacity();
+  renderPlans();
+  renderRoad();
+  setupSchedules();
+  describeScenario();
+  const charts = [['fan', drawFan], ['hist', drawHist], ['demand-chart', drawDemand], ['acc-d', drawAccDemand],
+    ['acc-s', drawAccStorage], ['pressure', drawPressure], ['sched', drawSchedule]];
+  for (const [id, fn] of charts) {
+    fn();
+    let last = document.getElementById(id).clientWidth, raf = 0;
+    new ResizeObserver(() => {
+      const w = document.getElementById(id).clientWidth;
+      if (Math.abs(w - last) < 2) return;
+      last = w; cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { hideTip(); fn(); });
+    }).observe(document.getElementById(id));
+  }
+})();
+</script>
+</body>
+</html>

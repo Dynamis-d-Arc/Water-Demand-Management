@@ -7,6 +7,7 @@ Writes to data/clean/:
   bangphra_flags.csv                every value that was changed or looks suspicious, with the raw value
   bangphra_data_dictionary.csv      column name, Excel column, unit, Thai header, coverage
   bangphra_level_storage_area.csv   level -> storage/area table from recent years
+  bangphra_allocation_plan.csv      daily plan per user for the current water year (sheet 3)
 and reports/data_quality_bangphra.md.
 """
 import datetime as dt
@@ -16,8 +17,10 @@ import numpy as np
 import pandas as pd
 from scipy.io import savemat
 
+from openpyxl.utils import column_index_from_string
+
 from config import (CAPACITY_MCM, CLEAN_DIR, COLUMNS, DEFAULT_XLSX, EVAP_MM_PER_DAY,
-                    FIRST_DATA_ROW, REPORT_DIR, SHEET)
+                    FIRST_DATA_ROW, PLAN_COLUMNS, PLAN_FIRST_ROW, PLAN_SHEET, REPORT_DIR, SHEET)
 
 NAMES = [c[1] for c in COLUMNS]
 META = {c[1]: dict(col=c[0], unit=c[2], kind=c[3], blank=c[4], thai=c[5]) for c in COLUMNS}
@@ -114,6 +117,10 @@ def clean(raw):
     out_bad = df[flow_parts].isna().any(axis=1)
     flags.add(df, out_bad & df["outflow_total_m3"].notna(), "outflow_total_m3", "component_invalid")
     df.loc[out_bad, "outflow_total_m3"] = np.nan
+    # The sheet's inflow columns are derived from outflow, so they are invalid on the same days
+    for c in ["runoff_in_m3", "runoff_in_clipped_m3"]:
+        flags.add(df, out_bad & df[c].notna(), c, "component_invalid")
+        df.loc[out_bad, c] = np.nan
 
     # Consistency checks against the sheet's own formulas (flag only, before outlier removal)
     tot = df[uses].sum(axis=1, min_count=1)
@@ -175,6 +182,46 @@ def pct(ok, base):
     return round(100.0 * (ok & base).sum() / max(int(base.sum()), 1), 1)
 
 
+def load_plan(xlsx):
+    """Daily allocation plan per user for the current water year (blank = no allocation)."""
+    cols = list(PLAN_COLUMNS)
+    idx = [column_index_from_string(c) - 1 for c in cols]
+    raw = pd.read_excel(xlsx, sheet_name=PLAN_SHEET, header=None, skiprows=PLAN_FIRST_ROW - 1, engine="openpyxl")
+    plan = raw.iloc[:, idx]
+    plan.columns = list(PLAN_COLUMNS.values())
+    plan = plan[plan["date"].map(lambda v: isinstance(v, (dt.datetime, pd.Timestamp)))].copy()
+    plan["date"] = pd.to_datetime(plan["date"]).dt.normalize()
+    for c in plan.columns[1:]:
+        plan[c] = pd.to_numeric(plan[c], errors="coerce").fillna(0.0)
+    uses = ["plan_pwa_chonburi_m3", "plan_egat_bangpakong_m3", "plan_thai_oil_m3",
+            "plan_eastwater_m3", "plan_local_users_m3"]
+    plan["plan_use_total_m3"] = plan[uses].sum(axis=1)
+    return plan.drop_duplicates("date").reset_index(drop=True)
+
+
+def plan_vs_actual(df, plan):
+    """Mean daily plan vs actual per user over the days both exist."""
+    local = ["use_cassava_starch_m3", "use_panya_resort_m3", "use_siam_livestock_m3", "use_fisheries_research_m3",
+             "use_bangphra_golf_m3", "use_private_1_m3", "use_bangkok_livestock_m3", "use_private_2_m3"]
+    a = df.set_index("date")
+    a = a.assign(use_local_users_m3=a[local].sum(axis=1, min_count=1))
+    p = plan.set_index("date")
+    pairs = [("PWA Chonburi", "use_pwa_chonburi_m3", "plan_pwa_chonburi_m3"),
+             ("EGAT Bang Pakong", "use_egat_bangpakong_m3", "plan_egat_bangpakong_m3"),
+             ("Thai Oil", "use_thai_oil_m3", "plan_thai_oil_m3"),
+             ("Eastwater", "use_eastwater_m3", "plan_eastwater_m3"),
+             ("Local users", "use_local_users_m3", "plan_local_users_m3"),
+             ("Total use", "use_total_m3", "plan_use_total_m3"),
+             ("Evaporation", "evap_seepage_m3", "plan_evap_seepage_m3")]
+    rows = []
+    for label, ac, pc in pairs:
+        j = pd.concat([a[ac], p[pc]], axis=1, join="inner").dropna()
+        rows.append(dict(user=label, days=len(j), first=j.index.min().date(), last=j.index.max().date(),
+                         plan_mean=j[pc].mean(), actual_mean=j[ac].mean(),
+                         actual_pct_of_plan=100 * j[ac].sum() / j[pc].sum() if j[pc].sum() else np.nan))
+    return pd.DataFrame(rows)
+
+
 def level_storage_table(df, since="2020-01-01"):
     recent = df[(df["date"] >= since) & df["level_m_msl"].notna() & df["storage_mcm"].notna()]
     t = (recent.assign(level_m=recent["level_m_msl"].round(2))
@@ -217,7 +264,7 @@ def save(df, flags, table):
     pd.DataFrame(rows).to_csv(CLEAN_DIR / "bangphra_data_dictionary.csv", index=False, encoding="utf-8-sig")
 
 
-def write_report(df, flags, notes, drift):
+def write_report(df, flags, notes, drift, pva):
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     yearly = df.groupby(df["date"].dt.year).agg(
         days=("date", "size"),
@@ -262,6 +309,10 @@ def write_report(df, flags, notes, drift):
         md_table(yearly.rename_axis("year").reset_index()),
         "",
         f"Storage capacity used for % full: {CAPACITY_MCM} MCM.",
+        "",
+        f"## Allocation plan vs actual (sheet `{PLAN_SHEET}`, m3/day)",
+        "",
+        md_table(pva.round(1)),
     ]
     (REPORT_DIR / "data_quality_bangphra.md").write_text("\n".join(lines), encoding="utf-8")
 
@@ -272,12 +323,19 @@ def main():
     df, flags, notes = clean(raw)
     table = level_storage_table(df)
     drift = storage_curve_drift(df, table)
+    plan = load_plan(xlsx)
+    pva = plan_vs_actual(df, plan)
     save(df, flags, table)
-    write_report(df, flags, notes, drift)
+    out = plan.copy()
+    out["date"] = out["date"].dt.strftime("%Y-%m-%d")
+    out.to_csv(CLEAN_DIR / "bangphra_allocation_plan.csv", index=False)
+    write_report(df, flags, notes, drift, pva)
     print(f"kept {len(df)} days {notes['first_date']} .. {notes['last_date']}, {len(flags)} flags")
     for k, v in notes.items():
         print(f"  {k}: {v}")
     print(flags.groupby(["column", "flag"]).size().to_string())
+    print(f"plan: {len(plan)} days {plan['date'].min().date()} .. {plan['date'].max().date()}")
+    print(pva.round(1).to_string())
 
 
 if __name__ == "__main__":

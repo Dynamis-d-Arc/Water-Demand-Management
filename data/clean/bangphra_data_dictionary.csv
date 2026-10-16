@@ -28,7 +28,7 @@ div_in_nongkho_spillway_m3,AA,m3,diversion,zero,ผันน้ำเข้า: 
 div_in_phra_ong_m3,AB,m3,diversion,zero,ผันน้ำเข้า: น้ำที่สูบจากพระองค์ฯ,12871,1990-01-01,2025-03-28
 div_in_phan_thong_m3,AC,m3,diversion,zero,ผันน้ำเข้า: น้ำที่สูบจากพานทอง,12871,1990-01-01,2025-03-28
 outflow_total_m3,AD,m3,outflow,missing,รวมปริมาณน้ำทั้งหมด (OUTFLOW),12834,1990-01-01,2025-03-27
-runoff_in_clipped_m3,AE,m3,inflow,zero,"INFLOW FROM RUNOFF (incl. rain on reservoir, clipped at 0)",12871,1990-01-01,2025-03-28
-runoff_in_m3,AF,m3,inflow,zero,"INFLOW FROM RUNOFF (incl. rain on reservoir, balance residual)",12871,1990-01-01,2025-03-28
+runoff_in_clipped_m3,AE,m3,inflow,zero,"INFLOW FROM RUNOFF (incl. rain on reservoir, clipped at 0)",12834,1990-01-01,2025-03-27
+runoff_in_m3,AF,m3,inflow,zero,"INFLOW FROM RUNOFF (incl. rain on reservoir, balance residual)",12834,1990-01-01,2025-03-27
 div_in_total_m3,(derived),m3,derived,,,12871,1990-01-01,2025-03-28
 inflow_recalc_m3,(derived),m3,derived,,,12834,1990-01-01,2025-03-27

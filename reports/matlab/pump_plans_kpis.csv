@@ -1,0 +1,11 @@
+scenario,schedule,feasible,status,converged,energy_kwh,cost_thb,kwh_per_m3,thb_per_m3,cost_vs_comparator_pct,comparator,min_customer_pressure_m,tank_reserve,pump_starts,peak_pumps_avg
+Model as supplied,"Model operation (14 pumps all day)",1,Warning,1,191207.004272461,660896.551633661,0.277754461082332,0.960043102127185,0,itself,6.62818574905396,,0,14
+Model demand,"Model operation (6 + 6 + 2 pumps all day)",1,Warning,1,190842.046722412,659874.34789238,0.277224310066069,0.958558210659134,0,the model's operation (6 + 6 + 2 pumps all day),6.61929321289062,,0,14
+Model demand,"Reference (lowest energy, ignores tariff)",0,no feasible schedule,0,NaN,NaN,NaN,NaN,NaN,the model's operation (6 + 6 + 2 pumps all day),NaN,,NaN,NaN
+Model demand,"Plan A lowest cost",0,no feasible schedule,0,NaN,NaN,NaN,NaN,NaN,the model's operation (6 + 6 + 2 pumps all day),NaN,,NaN,NaN
+Model demand,"Plan C balanced",0,no feasible schedule,0,NaN,NaN,NaN,NaN,NaN,the model's operation (6 + 6 + 2 pumps all day),NaN,,NaN,NaN
+Model demand,"Plan B lower risk",0,no feasible schedule,0,NaN,NaN,NaN,NaN,NaN,the model's operation (6 + 6 + 2 pumps all day),NaN,,NaN,NaN
+Without placeholder nodes 71 and 678,"Reference (lowest energy, ignores tariff)",1,Pass,1,129140.175287364,448392.914181144,0.264413149156258,0.918079770560673,0,the reference,11.7397155761719,10% / 10%,12,10.3846153846154
+Without placeholder nodes 71 and 678,"Plan A lowest cost",1,Warning,0,126097.091203615,433505.524253186,0.258182466536067,0.887597996435703,NaN,the reference,8.96567249298096,10% / 10%,14,9.92307692307692
+Without placeholder nodes 71 and 678,"Plan C balanced",1,Warning,0,130060.9152869,447507.047706415,0.266298354610639,0.916265968281143,NaN,the reference,8.9696102142334,30% / 30%,20,10.0769230769231
+Without placeholder nodes 71 and 678,"Plan B lower risk",1,Pass,1,130858.410451958,449390.781425514,0.267931217564098,0.920122893236761,0.22254304490783,the reference,13.7307348251343,50% / 50%,23,10.1538461538462

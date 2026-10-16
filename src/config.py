@@ -52,6 +52,21 @@ COLUMNS = [
     ("AF", "runoff_in_m3",                "m3",     "inflow",    "zero",    "INFLOW FROM RUNOFF (incl. rain on reservoir, balance residual)"),
 ]
 
+# Water-year allocation plan (1 Nov 2024 - 31 Oct 2025) on sheet "3. รายงานอ่างฯบางพระ":
+# dates in column P from row 5, daily plan ("แผน") per user in the columns below.
+PLAN_SHEET = "3. รายงานอ่างฯบางพระ"
+PLAN_FIRST_ROW = 5
+PLAN_COLUMNS = {
+    "P": "date",
+    "R": "plan_pwa_chonburi_m3",
+    "U": "plan_egat_bangpakong_m3",
+    "X": "plan_thai_oil_m3",
+    "AA": "plan_eastwater_m3",
+    "AD": "plan_local_users_m3",
+    "AG": "plan_evap_seepage_m3",
+    "AJ": "plan_outflow_m3",
+}
+
 # Monthly pan-evaporation rates (mm/day) from the side table at AH1:AI12 of the sheet.
 EVAP_MM_PER_DAY = [4.8, 5.1, 5.6, 5.8, 5.3, 5.2, 5.1, 5.0, 4.7, 4.5, 4.7, 5.0]
 

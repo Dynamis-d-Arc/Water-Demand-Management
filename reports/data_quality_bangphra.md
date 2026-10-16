@@ -17,6 +17,8 @@ Source sheet `WB บางพระ`; 13149 dated rows, kept 1990-01-01 to 2025-
 | level_m_msl | level_jump | 18 |
 | outflow_total_m3 | component_invalid | 35 |
 | outflow_total_m3 | negative_flow | 2 |
+| runoff_in_clipped_m3 | component_invalid | 37 |
+| runoff_in_m3 | component_invalid | 37 |
 | use_eastwater_m3 | dash_as_zero | 4 |
 | use_eastwater_m3 | negative_flow | 2 |
 | use_egat_bangpakong_m3 | dash_as_zero | 20 |
@@ -119,3 +121,15 @@ A non-zero residual means the level->storage table used that year differs from t
 | 2025 | 87 | 268,132 | 219,034 | 14,265 | 4,639 | 1 | 1 | 1 | 1 | 72.3 | 96.6 | 0.0 |
 
 Storage capacity used for % full: 117.0 MCM.
+
+## Allocation plan vs actual (sheet `3. รายงานอ่างฯบางพระ`, m3/day)
+
+| user | days | first | last | plan_mean | actual_mean | actual_pct_of_plan |
+|---|---|---|---|---|---|---|
+| PWA Chonburi | 147 | 2024-11-01 | 2025-03-27 | 220,000 | 218,140 | 99.2 |
+| EGAT Bang Pakong | 147 | 2024-11-01 | 2025-03-27 | 5,000 | 3,926 | 78.5 |
+| Thai Oil | 147 | 2024-11-01 | 2025-03-27 | 18,221 | 14,115 | 77.5 |
+| Eastwater | 147 | 2024-11-01 | 2025-03-27 | 113,369 | 40,720 | 35.9 |
+| Local users | 148 | 2024-11-01 | 2025-03-28 | 6,000 | 6,000 | 100 |
+| Total use | 147 | 2024-11-01 | 2025-03-27 | 362,590 | 282,901 | 78.0 |
+| Evaporation | 148 | 2024-11-01 | 2025-03-28 | 68,108 | 70,439 | 103 |

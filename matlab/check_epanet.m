@@ -1,17 +1,14 @@
-% check_epanet.m  Run the EPANET model with the EPANET-MATLAB Toolkit and compare with the Python check.
+% check_epanet.m  Run the EPANET model from MATLAB and compare with the Python check.
 % Run from water_poc:   matlab -batch "run('matlab/check_epanet.m')"
-% The model is copied to a temp folder so toolkit files never land next to the original .inp.
+% Uses the epyt backend by default (works under Windows Smart App Control); to use the
+% EPANET-MATLAB Toolkit instead:   matlab -batch "backend='toolkit'; run('matlab/check_epanet.m')"
 
+if ~exist('backend', 'var'), backend = "epyt"; end
 root = fileparts(fileparts(mfilename('fullpath')));
+addpath(fileparts(mfilename('fullpath')));
 src = fullfile(fileparts(root), 'Demand-2023 v20RY to MTP new TM2P.inp');
-work = tempname;
-mkdir(work);
-copyfile(src, fullfile(work, 'model.inp'));
-fprintf('Toolkit: %s\n', which('epanet'));
-
-% The toolkit resolves the file with which(), so load it from the current folder
-here = cd(work);
-d = epanet('model.inp');
+[d, cleanup] = load_network(src, backend);
+fprintf('Backend: %s\n', backend);
 fprintf('Nodes %d (junctions %d, reservoirs %d, tanks %d), links %d (pipes %d, pumps %d, valves %d)\n', ...
     d.getNodeCount, d.getNodeJunctionCount, d.getNodeReservoirCount, d.getNodeTankCount, ...
     d.getLinkCount, d.getLinkPipeCount, d.getLinkPumpCount, d.getLinkValveCount);
@@ -47,6 +44,4 @@ for i = tanks
     lvl = H.Head(:, i) - elev(i);
     fprintf('Tank %-8s level start %.2f m, end %.2f m\n', ids{i}, lvl(1), lvl(end));
 end
-d.unload;
-cd(here);
-rmdir(work, 's');
+clear cleanup
