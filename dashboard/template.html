@@ -1117,7 +1117,7 @@ footer code { font-family: var(--mono); font-size: 12px; }
       (validTou.length > 1 ? `Plans that shift pumping away from peak hours and pass every check cost ${range} against the lowest-energy plan.`
         : validTou.length === 1 ? `The one plan that shifts pumping away from peak hours and passes every check costs ${range} against the lowest-energy plan.`
         : 'No plan that shifts pumping away from peak hours passed every check.') +
-      ' The head tanks are too small to store water for later; the next section shows the levers that do move the cost.' +
+      ' The pumps, not the tanks, limit this: running more of them at once in off-peak hours raises the head they pump against. The next section shows the levers that do move the cost.' +
       (rejected.length ? ` ${rejected.join(' and ')} looked cheaper but failed the hydraulic check, so ${rejected.length > 1 ? 'they are' : 'it is'} not offered.` : '') +
       (refOk ? '' : ' The lowest-energy reference itself did not pass the check in this run, so the comparison is indicative only.');
   }
